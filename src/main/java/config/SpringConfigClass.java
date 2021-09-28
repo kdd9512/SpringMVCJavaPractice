@@ -49,6 +49,7 @@ import javax.servlet.*;
 //    }
 //}
 
+
 // AbstractAnnotationConfigDispatcherServletInitializer 을 이용하는 경우
 
 public class SpringConfigClass extends AbstractAnnotationConfigDispatcherServletInitializer {
