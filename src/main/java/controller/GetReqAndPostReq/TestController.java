@@ -1,4 +1,4 @@
-package controller;
+package controller.GetReqAndPostReq;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +20,7 @@ public class TestController {
     }
 
     // POST 방식을 사용하기 위한 매핑
+    // 이 방식은 주로 어떤 양식에 데이터를 담아야 할 때(ex: 회원가입 등) 사용된다.
 //    @RequestMapping(value = "/t3", method = RequestMethod.POST)
 //    public String test3() { return "test3"; }
 
