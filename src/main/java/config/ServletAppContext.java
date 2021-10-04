@@ -14,11 +14,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 // Scan 할 패키지 지정
 //@ComponentScan("controller.GetReqAndPostReq")
-@ComponentScan("controller.HttpServletRequestTest")
+//@ComponentScan("controller.HttpServletRequestTest")
+//@ComponentScan("controller.GetParamObject")
+@ComponentScan("controller.ViewResolver")
 public class ServletAppContext implements WebMvcConfigurer {
 
     // Controller 의 메서드가 반환하는 jsp 의 이름 앞/뒤의 경로와 확장자를 붙혀주도록 설정.
-    // 이 작업으로 인해 경로상에서 반복되는 부분을 입력하지 않아도 된다.
+    // 이 작업을 통해 경로상에서 반복되는 부분을 입력하지 않아도 된다.
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         WebMvcConfigurer.super.configureViewResolvers(registry);
@@ -26,7 +28,6 @@ public class ServletAppContext implements WebMvcConfigurer {
     }
 
     // 정적 파일의 경로를 매핑.
-
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         WebMvcConfigurer.super.addResourceHandlers(registry);

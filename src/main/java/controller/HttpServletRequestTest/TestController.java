@@ -12,8 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class TestController {
 
-    // 브라우저가 요청하는 정보들을 HttpServletRequest 또는 WebRequest 로 주입받을 수 있다.
-    // GET 방식과 POST 방식에서 사용방식은 완전히 똑같다.
+    // 브라우저가 요청하는 정보들을 요청하고 주입받는다.
+    // 1. HttpServletRequest / WebRequest / PathVariable / RequestParam 의 방식이 존재한다.
+    // 2. GET 방식과 POST 방식에서 사용방식은 완전히 똑같다.
 
     @GetMapping("/t1") // GET 방식
     public String test1(HttpServletRequest req) {
@@ -118,7 +119,8 @@ public class TestController {
             // 넘어오는 파라메터 의 값을 안받는건 문제가 되지 않으나, 파라메터를 넘기지 않는건 문제가 된다.
             // 이 경우, 이하와 같이 required = false 를 설정해 두면 파라메터 내부에 해당 데이터가 없을 경우,
             // 해당 데이터를 자동으로 null 처리 한다.
-            @RequestParam(required = false, value = "data4") String v4) {
+            // 넘어오는 값이 없을 경우 이용할 기본값도 설정할 수 있다 (defaultValue = "값").
+            @RequestParam(required = false, value = "data4", defaultValue = "asdf") String v4) {
 
         System.out.println("data1 = v1 : " + v1);
         System.out.println("data2 : " + data2);
