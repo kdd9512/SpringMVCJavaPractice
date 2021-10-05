@@ -57,35 +57,71 @@
 <%--<a href="t5?data1=100&data2=200&data3=300&data3=400">RequestParam</a>--%>
 
 
-<%-- GET Parameter Object --%>
-<ul>
-    <%--
-    파라메터를 전송한다.
-    ** 데이터가 자동으로 parsing 되지 않는점을 주의.
-    --%>
-    <li>
-        <a href="t1?data1=1972&data2=1121">
-            t1 param Obj GET</a>
-    </li>
-    <%--
-    동명의 복수 개의 파라메터를 삽입.
-    같은 이름의 데이터가 복수 개 주입될 경우, 가장 처음 주입된 데이터만 보존된다.
-    --%>
-    <li>
-        <a href="t1?data1=1972&data2=1121&data3=1122&data3=1123">
-            t1 param Obj GET(동명복수 데이터 data3)</a>
-    </li>
-    <%--
-    @ModelAttribute 를 이용하면 @RequestParam 을 이용하여 파라메터를 주입했을 때와는 달리,
-    ** 데이터가 자동으로 형변환 되어 적용된다.
-    단, Bean을 정의할 필요가 있다(private 변수 / getter / setter).
-    --%>
-    <li>
-        <a href="t2?data1=1972&data2=1121&data3=1122&data3=1123">
-            ModelAttribute 이용(동명복수 데이터 data3), 자동형변환 적용.</a>
-    </li>
 
-</ul>
+
+<%-- GET Parameter Object --%>
+<%--<ul>--%>
+<%--
+파라메터를 전송한다.
+** 데이터가 자동으로 parsing 되지 않는점을 주의.
+--%>
+<%--    <li>--%>
+<%--        <a href="t1?data1=1972&data2=1121">--%>
+<%--            t1 param Obj GET</a>--%>
+<%--    </li>--%>
+<%--
+동명의 복수 개의 파라메터를 삽입.
+같은 이름의 데이터가 복수 개 주입될 경우, 가장 처음 주입된 데이터만 보존된다.
+--%>
+<%--    <li>--%>
+<%--        <a href="t1?data1=1972&data2=1121&data3=1122&data3=1123">--%>
+<%--            t1 param Obj GET(동명복수 데이터 data3)</a>--%>
+<%--    </li>--%>
+<%--
+@ModelAttribute 를 이용하면 @RequestParam 을 이용하여 파라메터를 주입했을 때와는 달리,
+** 데이터가 자동으로 형변환 되어 적용된다.
+단, Bean을 정의할 필요가 있다(private 변수 / getter / setter).
+--%>
+<%--    <li>--%>
+<%--        <a href="t2?data1=1972&data2=1121&data3=1122&data3=1123">--%>
+<%--            ModelAttribute 이용(동명복수 데이터 data3), 자동형변환 적용.</a>--%>
+<%--    </li>--%>
+
+<%--</ul>--%>
+
+
+
+<%-- ViewResolver --%>
+<%--
+컨트롤러에서 전달받은 view 의 이름을 토대로 jsp 를 찾아 선택, jsp 데이터를 분석하여
+ 응답결과를 만들어 전달하는 요소.
+ --%>
+
+<%--
+SpringMVC 는 HttpServletRequest 객체를 jsp 쪽으로 전달하는데,
+ViewResolver 는 이를 이용하여 jsp 작업시 데이터를 이용할 수 있다.
+ --%>
+<hr/>
+<%-- 데이터전송이 없는 요청. --%>
+<a href="t1">t1 요청</a>
+<hr/>
+<%--
+    parameter 를 이용하여 데이터를 전송
+--%>
+<a href="t1?data1=1972&data2=1121">t1 요청(파라메터 전송)</a>
+<hr/>
+<%--
+    HttpServletRequest 이용하여 데이터를 전송.
+--%>
+<a href="t2">t2 요청(HttpServletRequest 이용)</a>
+<hr/>
+<%--
+    Model 이용.
+--%>
+<a href="t3">t3 요청(Model 이용)</a>
+<hr/>
+
+
 
 </body>
 </html>
