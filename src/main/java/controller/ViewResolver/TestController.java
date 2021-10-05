@@ -3,6 +3,7 @@ package controller.ViewResolver;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -43,4 +44,21 @@ public class TestController {
     }
 
 
+    // ModelAndView 클래스를 이용하여 주입된 데이터를 직접 이용할 수 있다.
+    // 이 클래스는 view 의 이름까지 관리하기 때문에 이 경우 return 값은
+    // 기존의 String 이 아니라
+    @GetMapping("t4")
+    public ModelAndView test4(ModelAndView mv) {
+
+        // .addObject 이용하여 데이터를 넣는다.
+        mv.addObject("data1", 1972);
+        mv.addObject("data2", "심영");
+
+        // view 의 이름을 결정하는 부분.
+        // .setViewName 을 이용한다.
+        mv.setViewName("test4");
+
+        // 위의 정보들을 담은 ModelAndView 를 return 한다.
+        return mv;
+    }
 }

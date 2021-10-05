@@ -120,8 +120,10 @@ ViewResolver 는 이를 이용하여 jsp 작업시 데이터를 이용할 수 �
 --%>
 <a href="t3">t3 요청(Model 이용)</a>
 <hr/>
-
-
+<%--
+    ModelAndView 이용하여 데이터를 직접 이용.
+ --%>
+<a href="t4">t4 요청(ModelAndView 이용)</a>
 
 </body>
 </html>
