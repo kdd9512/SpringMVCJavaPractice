@@ -21,6 +21,9 @@ public class TestController {
     }
 
 
+    // 방법은 여러가지가 있으나, 선택하는건 전적으로 유저의 취향이다.
+    // 실제로 다 비슷비슷하기도 하고.
+
     @GetMapping("t2")
     public String test2(HttpServletRequest req) {
 

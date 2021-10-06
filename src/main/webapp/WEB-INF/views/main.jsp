@@ -101,29 +101,51 @@
 SpringMVC 는 HttpServletRequest 객체를 jsp 쪽으로 전달하는데,
 ViewResolver 는 이를 이용하여 jsp 작업시 데이터를 이용할 수 있다.
  --%>
-<hr/>
+<%--<hr/>--%>
 <%-- 데이터전송이 없는 요청. --%>
-<a href="t1">t1 요청</a>
-<hr/>
+<%--<a href="t1">t1 요청</a>--%>
+<%--<hr/>--%>
 <%--
     parameter 를 이용하여 데이터를 전송
 --%>
-<a href="t1?data1=1972&data2=1121">t1 요청(파라메터 전송)</a>
-<hr/>
+<%--<a href="t1?data1=1972&data2=1121">t1 요청(파라메터 전송)</a>--%>
+<%--<hr/>--%>
 <%--
     HttpServletRequest 이용하여 데이터를 전송.
 --%>
-<a href="t2">t2 요청(HttpServletRequest 이용)</a>
-<hr/>
+<%--<a href="t2">t2 요청(HttpServletRequest 이용)</a>--%>
+<%--<hr/>--%>
 <%--
     Model 이용.
 --%>
-<a href="t3">t3 요청(Model 이용)</a>
-<hr/>
+<%--<a href="t3">t3 요청(Model 이용)</a>--%>
+<%--<hr/>--%>
 <%--
     ModelAndView 이용하여 데이터를 직접 이용.
  --%>
-<a href="t4">t4 요청(ModelAndView 이용)</a>
+<%--<a href="t4">t4 요청(ModelAndView 이용)</a>--%>
+
+
+
+<%-- Command Object --%>
+
+<%--<form action="t1" method="post">--%>
+<%--    <p>data1</p>--%>
+<%--    <input type="text" name="data1" placeholder="data1 value" />--%>
+<%--    <p>data2</p>--%>
+<%--    <input type="text" name="data2" placeholder="data2 value"/>--%>
+<%--    <button type="submit">t1 정보 제출</button>--%>
+<%--</form>--%>
+
+
+
+<%-- CustomFormTag --%>
+
+<br/>
+<a href="t1">t1 CustomFormTag</a><br/>
+<a href="t2">t2 CustomFormTag</a><br/>
+<a href="t3">t3 CustomFormTag</a><br/>
+<a href="t4">t4 CustomFormTag</a><br/>
 
 </body>
 </html>

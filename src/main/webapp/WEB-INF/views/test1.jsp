@@ -12,10 +12,50 @@
     <a href="t2">t2 이동.</a>
 </div>
 <%-- 파라메터로 넘어오는 데이터를 출력하고자 할 때는, param.데이터명 --%>
-<div>
-    <span>${param.data1}년</span>
-    <span>${param.data2}일</span>
-    <span>김두한은 오랜 지병이었던 고혈압으로 쓰러졌다.</span>
-</div>
+<%--<div>--%>
+<%--    <span>${param.data1}년</span>--%>
+<%--    <span>11월 21일</span>--%>
+<%--    <span>${param.data2}은 오랜 지병이었던 고혈압으로 쓰러졌다.</span>--%>
+<%--</div>--%>
+
+<%-- request 에 담겨오는 경우는 requestScope.데이터명--%>
+<%--<div>--%>
+    <%--
+        Command Object 를 이용할 경우 requestScope.Command Object명.데이터명
+    --%>
+<%--    <span>${requestScope.dataBean.data1}년</span>--%>
+<%--    <span>11월 21일</span>--%>
+<%--    <span>${requestScope.dataBean.data2}은 오랜 지병이었던 고혈압으로 쓰러졌다.</span>--%>
+<%--    <br/>--%>
+
+<%-- 임의로 지정한 Command Object 의 이름 t1Value 를 이용해야 정상적으로 출력되는 것을 확인할 수 있다. --%>
+<%--    <span>${requestScope.t1Value.data1}년</span>--%>
+<%--    <span>11월 21일</span>--%>
+<%--    <span>${requestScope.t1Value.data2}은 오랜 지병이었던 고혈압으로 쓰러졌다.</span>--%>
+<%--</div>--%>
+
+
+<%-- Custom Form Tag 예제--%>
+
+<%-- Custom Form Tag 를 사용하지 않는 방법. jsp 에서 직접 해당 값을 끌어와서 적는다.
+     물론 form 내부에 필요한 요소들을 전부 작성해야 한다.
+--%>
+<form action="result" method="post">
+    이름 : <input type="text" name="user_name" placeholder="이름"
+                value="${requestScope.dataBean.user_name}"/><br/>
+    id : <input type="text" name="user_id" placeholder="아이디"
+                value="${requestScope.dataBean.user_id}"/><br/>
+    password : <input type="password" name="user_pw" placeholder="비밀번호"
+                      value="${requestScope.dataBean.user_pw}"/><br/>
+    우편번호 : <input type="text" name="user_postcode" placeholder="우편번호"
+                  value="${requestScope.dataBean.user_postcode}"/><br/>
+    주소1 : <input type="text" name="user_add1" placeholder="주소1"
+                 value="${requestScope.dataBean.user_add1}"/><br/>
+    주소2 : <input type="text" name="user_add2" placeholder="주소2"
+                 value="${requestScope.dataBean.user_add2}"/><br/>
+    <button type="submit">submit</button>
+</form>
+
+
 </body>
 </html>
