@@ -84,7 +84,34 @@
     <form:hidden path="d1"/>
 
 <%--
-3. form:button - submit 타입의 버튼을 생성한다.
+3. form:input - text 타입의 input 태그를 생성한다.
+일반적으로 사용되는 input 란을 생성할 때 사용될 것이다.
+
+* path : 설정한 문자열은 id 와 name 속성으로 지정되며, model 값을 추출해  value 에 주입한다.
+ --%>
+    <form:input path="d2"/>
+
+<%--
+ 4. form:password - password 타입의 input 태그를 생성.
+
+ * path : 설정한 문자열은 id 와 name 속성으로 지정되며, model 값을 추출해  value 에 주입한다.
+ * showPassword : password 타입의 input 태그를 CustomForm 으로 생성하면 bean 에 값이 담겨 있더라도
+                  소스코드 상에 비밀번호가 노출되어 보안상으로 위험하기 때문에 일반적으로 값이 담기지 않는데,
+                  해당 속성에 true 값을 넣어주면 이 제약을 해제하여 비밀번호가 입력되어 있게끔 설정할 수 있다.
+ --%>
+<%--    <form:password path="d3"/>--%>
+    <form:password path="d3" showPassword="true"/>
+
+<%--
+5. form:textarea - textarea 타입의 input 태그를 생성한다. text 를 입력할 수 있는 input 보다 큰 창을 생성한다.
+
+ * path : 설정한 문자열은 id 와 name 속성으로 지정되며, model 값을 추출해  value 에 주입한다.
+--%>
+    <form:textarea path="d4"/>
+
+
+<%--
+6. form:button - submit 타입의 버튼을 생성한다.
 
 * disabled : true 값을 넣는 것으로 버튼을 비활성화한다.
 --%>

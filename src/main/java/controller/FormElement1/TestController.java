@@ -11,6 +11,9 @@ public class TestController {
     public String test1(DataBean bean) {
 
         bean.setD1("1972");
+        bean.setD2("김두한");
+        bean.setD3("1121");
+        bean.setD4("김두한은 오랜 지병이었던 고혈압으로 쓰러졌다.");
 
         return "test1";
     }
