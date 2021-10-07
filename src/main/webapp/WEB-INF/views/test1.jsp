@@ -75,6 +75,22 @@
  --%>
 <form:form modelAttribute="dataBean" action="result">
 
+<%--
+2. form:hidden - hidden 타입의 input 태그를 생성한다.
+주로 사용자에게 입력받지 않아도 되는 혹은, 반드시 들어가야 하나 사용자가 손을 대선 안되는 값을 보내야 할 때 쓰일 것이다.
+
+* path : 설정한 문자열은 id 와 name 속성으로 지정되며, model 값을 추출해  value 에 주입한다.
+--%>
+    <form:hidden path="d1"/>
+
+<%--
+3. form:button - submit 타입의 버튼을 생성한다.
+
+* disabled : true 값을 넣는 것으로 버튼을 비활성화한다.
+--%>
+    <form:button>submit</form:button>
+
+
 </form:form>
 
 

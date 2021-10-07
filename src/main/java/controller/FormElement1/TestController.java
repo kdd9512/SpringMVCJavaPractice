@@ -10,6 +10,7 @@ public class TestController {
     @GetMapping("t1")
     public String test1(DataBean bean) {
 
+        bean.setD1("1972");
 
         return "test1";
     }
