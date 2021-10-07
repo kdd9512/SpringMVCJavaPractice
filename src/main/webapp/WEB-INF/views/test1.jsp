@@ -1,4 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%-- 커스텀 폼 태그를 이용하기 위한 taglib 을 추가한다. --%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>test1</title>
@@ -35,26 +38,44 @@
 <%--</div>--%>
 
 
-<%-- Custom Form Tag 예제--%>
+<%-- Custom Form Tag 예제 1 --%>
 
 <%-- Custom Form Tag 를 사용하지 않는 방법. jsp 에서 직접 해당 값을 끌어와서 적는다.
      물론 form 내부에 필요한 요소들을 전부 작성해야 한다.
 --%>
-<form action="result" method="post">
-    이름 : <input type="text" name="user_name" placeholder="이름"
-                value="${requestScope.dataBean.user_name}"/><br/>
-    id : <input type="text" name="user_id" placeholder="아이디"
-                value="${requestScope.dataBean.user_id}"/><br/>
-    password : <input type="password" name="user_pw" placeholder="비밀번호"
-                      value="${requestScope.dataBean.user_pw}"/><br/>
-    우편번호 : <input type="text" name="user_postcode" placeholder="우편번호"
-                  value="${requestScope.dataBean.user_postcode}"/><br/>
-    주소1 : <input type="text" name="user_add1" placeholder="주소1"
-                 value="${requestScope.dataBean.user_add1}"/><br/>
-    주소2 : <input type="text" name="user_add2" placeholder="주소2"
-                 value="${requestScope.dataBean.user_add2}"/><br/>
-    <button type="submit">submit</button>
-</form>
+<%--<form action="result" method="post">--%>
+<%--    이름 : <input type="text" name="user_name" placeholder="이름"--%>
+<%--                value="${requestScope.dataBean.user_name}"/><br/>--%>
+<%--    id : <input type="text" name="user_id" placeholder="아이디"--%>
+<%--                value="${requestScope.dataBean.user_id}"/><br/>--%>
+<%--    password : <input type="password" name="user_pw" placeholder="비밀번호"--%>
+<%--                      value="${requestScope.dataBean.user_pw}"/><br/>--%>
+<%--    우편번호 : <input type="text" name="user_postcode" placeholder="우편번호"--%>
+<%--                  value="${requestScope.dataBean.user_postcode}"/><br/>--%>
+<%--    주소1 : <input type="text" name="user_add1" placeholder="주소1"--%>
+<%--                 value="${requestScope.dataBean.user_add1}"/><br/>--%>
+<%--    주소2 : <input type="text" name="user_add2" placeholder="주소2"--%>
+<%--                 value="${requestScope.dataBean.user_add2}"/><br/>--%>
+<%--    <button type="submit">submit</button>--%>
+<%--</form>--%>
+
+
+
+<%-- Custom Form Tag 예제 2 --%>
+
+<%--
+1. form:form - form 태그를 생성한다.
+
+* modelAttribute : form 태그 내의 입력 요소들에 적용될 value 값을 가진 객체명.
+  이 속성의 값은 실제 생성된 form 태그의 id 속성으로 결정된다. 생략 시, command 라는 값이 default 로 주어진다.
+
+* action : 요청할 주소를 설정한다. 생략 시, 현재 페이지가 설정된다.
+
+* method : 요청할 방식을 설정한다. 기본값은 post.
+ --%>
+<form:form modelAttribute="dataBean" action="result">
+
+</form:form>
 
 
 </body>
