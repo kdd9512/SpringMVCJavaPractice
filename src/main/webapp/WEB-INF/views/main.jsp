@@ -150,11 +150,18 @@ ViewResolver 는 이를 이용하여 jsp 작업시 데이터를 이용할 수 �
 
 <%-- CustomFormTag 2 --%>
 
-<ul>
-    <li>
-        <a href="t1">t1 CustomFormTag 2</a>
-    </li>
-</ul>
+<%--<ul>--%>
+<%--    <li>--%>
+<%--        <a href="t1">t1 CustomFormTag 2</a>--%>
+<%--    </li>--%>
+<%--</ul>--%>
+
+
+<%-- CustomFormTag 3 --%>
+
+<hr/>
+<a href="t1">t1 CustomFormTag 3</a>
+
 
 </body>
 </html>

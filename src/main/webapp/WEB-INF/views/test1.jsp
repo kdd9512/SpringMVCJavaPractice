@@ -73,7 +73,7 @@
 
 * method : 요청할 방식을 설정한다. 기본값은 post.
  --%>
-<form:form modelAttribute="dataBean" action="result">
+<%--<form:form modelAttribute="dataBean" action="result">--%>
 
 <%--
 2. form:hidden - hidden 타입의 input 태그를 생성한다.
@@ -81,7 +81,7 @@
 
 * path : 설정한 문자열은 id 와 name 속성으로 지정되며, model 값을 추출해  value 에 주입한다.
 --%>
-    <form:hidden path="d1"/>
+<%--    <form:hidden path="d1"/>--%>
 
 <%--
 3. form:input - text 타입의 input 태그를 생성한다.
@@ -89,7 +89,7 @@
 
 * path : 설정한 문자열은 id 와 name 속성으로 지정되며, model 값을 추출해  value 에 주입한다.
  --%>
-    <form:input path="d2"/>
+<%--    <form:input path="d2"/>--%>
 
 <%--
  4. form:password - password 타입의 input 태그를 생성.
@@ -100,14 +100,14 @@
                   해당 속성에 true 값을 넣어주면 이 제약을 해제하여 비밀번호가 입력되어 있게끔 설정할 수 있다.
  --%>
 <%--    <form:password path="d3"/>--%>
-    <form:password path="d3" showPassword="true"/>
+<%--    <form:password path="d3" showPassword="true"/>--%>
 
 <%--
 5. form:textarea - textarea 타입의 input 태그를 생성한다. text 를 입력할 수 있는 input 보다 큰 창을 생성한다.
 
  * path : 설정한 문자열은 id 와 name 속성으로 지정되며, model 값을 추출해  value 에 주입한다.
 --%>
-    <form:textarea path="d4"/>
+<%--    <form:textarea path="d4"/>--%>
 
 
 <%--
@@ -115,11 +115,92 @@
 
 * disabled : true 값을 넣는 것으로 버튼을 비활성화한다.
 --%>
-    <form:button>submit</form:button>
+<%--    <form:button>submit</form:button>--%>
 
 
+<%--</form:form>--%>
+
+
+
+<%-- Custom Form Tag 예제 3 --%>
+
+<%--
+    1. form:select - select 태그를 생성한다.
+
+    * path : 설정한 문자열은 id 와 name 속성으로 지정되며, model 의 값을 추출하여 option 태그에서
+             같은 value 값을 가진 option 태그를 찾아 선택된 상태로 태그를 생성한다.
+
+    2. form:option/options  - select 안에서 사용될 option 태그를 하나 혹은 그 이상의 개수 생성한다.
+
+    * items : option 태그들을 생성할 때 필요한 데이터가 담긴 list 나 배열.
+--%>
+<hr/>
+<form:form action="result" modelAttribute="dataBean">
+    <form:select path="d1">
+        <form:option value="무뇌봉동무">무뇌봉</form:option>
+        <form:option value="임선규동무">임선규</form:option>
+        <form:option value="황철동무">황철</form:option>
+    </form:select>
+    <hr/>
+<%--
+    value 값과 select 태그에 선택지로 나타날 문자열이 같은 경우
+    기준이 될 path 를 DataBean 의 private 변수를 부르고,
+    item 에서는 Controller 내에서 정의한 Array 를 불러 처리한다.
+    예제에서는 이렇게 직접 Array 를 임의로 제작해서 설정하나,
+    실제 업무에서는 MyBatis 로 주입받는 data 의 Array 값을 그대로 받아, 좌표만 설정하는 것이 기본이다.
+--%>
+    <form:select path="d2">
+        <form:options items="${requestScope.dataList}"/>
+    </form:select>
+    <hr/>
+    <form:select path="d3">
+        <form:options items="${requestScope.dataList2}"/>
+    </form:select>
+    <hr/>
+
+    <%--
+        value 값과 select 태그에 선택지로 나타날 문자열이 다른 경우.
+
+        itemLabel : 태그 사이에 사용할 문자. 즉, select 태그에서 선택지로 표시되는 값.
+        itemValue : 태그 사이에 사용할 값. 즉, select 태그에서 선택지가 실제로 갖는 값.
+     --%>
+    <form:select path="d4">
+        <form:options items="${requestScope.dataList3}"
+                      itemLabel="key" itemValue="value"/>
+    </form:select>
+    
+<%-- 
+    form:checkbox - checkbox 태그를 만든다.
+
+    String[] chkList 내부의 내용은  공산당, 안할거야  이므로,
+    이하의 checkbox 에도 같은 value 가 체크되어 있을 것이다.
+ --%>
+    <hr/>
+    <form:checkbox path="d5" value="공산당"/>공산당
+    <form:checkbox path="d5" value="할거야"/>할거야
+    <form:checkbox path="d5" value="안할거야"/>안할거야
+    <hr/>
+<%--
+    checkboxes 버전. 사용법은 상술한 select 와 같다.
+    path 에는 참고할 변수의 이름을 입력하고 items 는 ${requestScope.Array 명} 을 넣어주면 된다.
+    String [] dataList 에는 String[] chkList 와 일치하는 값이 없으므로 아무것도 체크되지 않을 것이다.
+ --%>
+    <form:checkboxes path="d6" items="${requestScope.dataList}"/>
+    <hr/>
+<%--
+    ArrayList 역시 같은 방법으로 사용한다.
+ --%>
+    <form:checkboxes path="d7" items="${requestScope.dataList2}"/>
+    <hr/>
+<%--
+    value 값과 checkbox 태그에 선택지로 나타날 문자열이 다른 경우. 역시 사용방법은 상술했던 방법과 같다.
+
+    itemLabel : 태그 사이에 사용할 문자. 즉, select 태그에서 선택지로 표시되는 값.
+    itemValue : 태그 사이에 사용할 값. 즉, select 태그에서 선택지가 실제로 갖는 값.
+ --%>
+    <form:checkboxes path="d8" items="${requestScope.dataList3}"
+                     itemLabel="key" itemValue="value"/>
 </form:form>
-
 
 </body>
 </html>
