@@ -1,10 +1,8 @@
 package controller.GetParamObject;
 
-import controller.GetParamObject.beans.DataBean;
 import controller.GetParamObject.beans.DataBean2;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
