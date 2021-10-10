@@ -134,14 +134,14 @@
 
     * items : option 태그들을 생성할 때 필요한 데이터가 담긴 list 나 배열.
 --%>
-<hr/>
-<form:form action="result" modelAttribute="dataBean">
-    <form:select path="d1">
-        <form:option value="무뇌봉동무">무뇌봉</form:option>
-        <form:option value="임선규동무">임선규</form:option>
-        <form:option value="황철동무">황철</form:option>
-    </form:select>
-    <hr/>
+<%--<hr/>--%>
+<%--<form:form action="result" modelAttribute="dataBean">--%>
+<%--    <form:select path="d1">--%>
+<%--        <form:option value="무뇌봉동무">무뇌봉</form:option>--%>
+<%--        <form:option value="임선규동무">임선규</form:option>--%>
+<%--        <form:option value="황철동무">황철</form:option>--%>
+<%--    </form:select>--%>
+<%--    <hr/>--%>
 <%--
     value 값과 select 태그에 선택지로 나타날 문자열이 같은 경우
     기준이 될 path 를 DataBean 의 private 변수를 부르고,
@@ -149,14 +149,14 @@
     예제에서는 이렇게 직접 Array 를 임의로 제작해서 설정하나,
     실제 업무에서는 MyBatis 로 주입받는 data 의 Array 값을 그대로 받아, 좌표만 설정하는 것이 기본이다.
 --%>
-    <form:select path="d2">
-        <form:options items="${requestScope.dataList}"/>
-    </form:select>
-    <hr/>
-    <form:select path="d3">
-        <form:options items="${requestScope.dataList2}"/>
-    </form:select>
-    <hr/>
+<%--    <form:select path="d2">--%>
+<%--        <form:options items="${requestScope.dataList}"/>--%>
+<%--    </form:select>--%>
+<%--    <hr/>--%>
+<%--    <form:select path="d3">--%>
+<%--        <form:options items="${requestScope.dataList2}"/>--%>
+<%--    </form:select>--%>
+<%--    <hr/>--%>
 
     <%--
         value 값과 select 태그에 선택지로 나타날 문자열이 다른 경우.
@@ -164,10 +164,10 @@
         itemLabel : 태그 사이에 사용할 문자. 즉, select 태그에서 선택지로 표시되는 값.
         itemValue : 태그 사이에 사용할 값. 즉, select 태그에서 선택지가 실제로 갖는 값.
      --%>
-    <form:select path="d4">
-        <form:options items="${requestScope.dataList3}"
-                      itemLabel="key" itemValue="value"/>
-    </form:select>
+<%--    <form:select path="d4">--%>
+<%--        <form:options items="${requestScope.dataList3}"--%>
+<%--                      itemLabel="key" itemValue="value"/>--%>
+<%--    </form:select>--%>
     
 <%-- 
     form:checkbox - checkbox 태그를 만든다.
@@ -175,32 +175,46 @@
     String[] chkList 내부의 내용은  공산당, 안할거야  이므로,
     이하의 checkbox 에도 같은 value 가 체크되어 있을 것이다.
  --%>
-    <hr/>
-    <form:checkbox path="d5" value="공산당"/>공산당
-    <form:checkbox path="d5" value="할거야"/>할거야
-    <form:checkbox path="d5" value="안할거야"/>안할거야
-    <hr/>
+<%--    <hr/>--%>
+<%--    <form:checkbox path="d5" value="공산당"/>공산당--%>
+<%--    <form:checkbox path="d5" value="할거야"/>할거야--%>
+<%--    <form:checkbox path="d5" value="안할거야"/>안할거야--%>
+<%--    <hr/>--%>
 <%--
     checkboxes 버전. 사용법은 상술한 select 와 같다.
     path 에는 참고할 변수의 이름을 입력하고 items 는 ${requestScope.Array 명} 을 넣어주면 된다.
     String [] dataList 에는 String[] chkList 와 일치하는 값이 없으므로 아무것도 체크되지 않을 것이다.
  --%>
-    <form:checkboxes path="d6" items="${requestScope.dataList}"/>
-    <hr/>
+<%--    <form:checkboxes path="d6" items="${requestScope.dataList}"/>--%>
+<%--    <hr/>--%>
 <%--
     ArrayList 역시 같은 방법으로 사용한다.
  --%>
-    <form:checkboxes path="d7" items="${requestScope.dataList2}"/>
-    <hr/>
+<%--    <form:checkboxes path="d7" items="${requestScope.dataList2}"/>--%>
+<%--    <hr/>--%>
 <%--
     value 값과 checkbox 태그에 선택지로 나타날 문자열이 다른 경우. 역시 사용방법은 상술했던 방법과 같다.
 
     itemLabel : 태그 사이에 사용할 문자. 즉, select 태그에서 선택지로 표시되는 값.
     itemValue : 태그 사이에 사용할 값. 즉, select 태그에서 선택지가 실제로 갖는 값.
  --%>
-    <form:checkboxes path="d8" items="${requestScope.dataList3}"
-                     itemLabel="key" itemValue="value"/>
-</form:form>
+<%--    <form:checkboxes path="d8" items="${requestScope.dataList3}"--%>
+<%--                     itemLabel="key" itemValue="value"/>--%>
+<%--</form:form>--%>
+
+
+<%-- RedirectForward --%>
+
+<%-- redirect
+     서버가 클라이언트에 요청할 주소를 응답결과로 전달하는 것.
+     클라이언트의 응답결과로 받은 요청주소를 직접 요청하게 된다.
+     주소창의 주소는 변경되며, redirect 는 새 요청이 발생하는 것이므로
+     HttpServletRequest 객체는 소멸 후 재생성되며 HttpSession 객체는 그대로 유지된다.
+
+     아래와 같이 요청한 것은 t1 이지만, redirect 로는 sub1.jsp 를 요청하도록 되어있다.
+     즉, 새 주소를 재요청하는 것. (t1 -> redirect:t1/sub1 -> sub/sub1.jsp)
+--%>
+
 
 </body>
 </html>
