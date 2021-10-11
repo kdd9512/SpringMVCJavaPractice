@@ -195,17 +195,24 @@ ViewResolver 는 이를 이용하여 jsp 작업시 데이터를 이용할 수 �
 
 
 <%--  RequestScope --%>
-<br/>
-<a href="t1">t1 RequestScope(HttpServletRequest 이용 redirect / forward)</a>
-<br/>
-<a href="t2">t2 RequestScope(Model 클래스 이용)</a>
-<br/>
-<a href="t3">t3 RequestScope(ModelAndView 클래스 이용)</a>
-<br/>
-<a href="t4">t4 RequestScope(bean 객체 이용)</a>
-<br/>
-<a href="t5">t5 RequestScope(ModelAttribute 이용)</a>
+<%--<br/>--%>
+<%--<a href="t1">t1 RequestScope(HttpServletRequest 이용 redirect / forward)</a>--%>
+<%--<br/>--%>
+<%--<a href="t2">t2 RequestScope(Model 클래스 이용)</a>--%>
+<%--<br/>--%>
+<%--<a href="t3">t3 RequestScope(ModelAndView 클래스 이용)</a>--%>
+<%--<br/>--%>
+<%--<a href="t4">t4 RequestScope(bean 객체 이용)</a>--%>
+<%--<br/>--%>
+<%--<a href="t5">t5 RequestScope(ModelAttribute 이용)</a>--%>
 
+
+
+<%-- @RequestScope annotation JAVA --%>
+
+<br/>
+<a href="t1">t1 @RequestScope JAVA</a>
+<a href="t2">t2 @RequestScope JAVA</a>
 
 
 </body>
