@@ -19,10 +19,11 @@ public class RootAppContext {
         return new DataBean();
     }
 
-
     @Bean("reqBean2")
     @RequestScope
     public DataBean2 dataBean2(){
         return new DataBean2();
     }
+
+
 }

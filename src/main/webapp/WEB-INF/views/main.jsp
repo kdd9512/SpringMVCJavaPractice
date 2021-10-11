@@ -212,8 +212,6 @@ ViewResolver 는 이를 이용하여 jsp 작업시 데이터를 이용할 수 �
 
 <br/>
 <a href="t1">t1 @RequestScope JAVA</a>
-<a href="t2">t2 @RequestScope JAVA</a>
-
 
 </body>
 </html>

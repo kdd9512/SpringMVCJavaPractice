@@ -2,6 +2,8 @@ package controller.RequestScopeBeanJava;
 
 import controller.RequestScopeBeanJava.beans.DataBean;
 import controller.RequestScopeBeanJava.beans.DataBean2;
+import controller.RequestScopeBeanJava.beans.DataBean3;
+import controller.RequestScopeBeanJava.beans.DataBean4;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +26,15 @@ public class TestController {
     @Resource(name = "reqBean2")
     DataBean2 reqBean2;
 
+    // @Component 를 이용하여 Bean 주입. 이 방식을 이용하면 RootAppContext 에서 Bean 을 만들 필요가 없다.
+    // ServletAppContext 에서 @ComponentScan 까지 해 주어야 하는 것을 잊지 말 것.
+    @Autowired
+    DataBean3 reqBean3;
+
+    @Resource(name = "reqBean4")
+    DataBean4 reqBean4;
+
+
     @GetMapping("t1")
     public String test1() {
         reqBean1.setData1("string1");
@@ -31,6 +42,12 @@ public class TestController {
 
         reqBean2.setData3("string3");
         reqBean2.setData4("string4");
+
+        reqBean3.setData5("string5");
+        reqBean3.setData6("string6");
+
+        reqBean4.setData7("string7");
+        reqBean4.setData8("string8");
 
         return "forward:result";
     }
@@ -44,29 +61,21 @@ public class TestController {
         System.out.printf("reqBean2.data3 : %s\n", reqBean2.getData3());
         System.out.printf("reqBean2.data4 : %s\n", reqBean2.getData4());
 
+        System.out.printf("reqBean3.data5 : %s\n", reqBean3.getData5());
+        System.out.printf("reqBean3.data6 : %s\n", reqBean3.getData6());
+
+        System.out.printf("reqBean4.data7 : %s\n", reqBean4.getData7());
+        System.out.printf("reqBean4.data8 : %s\n", reqBean4.getData8());
+
+        // 상술했듯이 새로운 request 가 발생했을 때 Bean 주입만 이루어지기 때문에 (request 영역에는 저장되지 않는다),
+        // Model 클래스를 이용하여 값을 저장해야 한다.
         model.addAttribute("reqBean1", reqBean1);
         model.addAttribute("reqBean2", reqBean2);
+        model.addAttribute("reqBean3", reqBean3);
+        model.addAttribute("reqBean4", reqBean4);
 
         return "result";
     }
 
-
-    @GetMapping("t2")
-    public String test2(){
-        reqBean2.setData3("string3");
-        reqBean2.setData4("string4");
-
-        return "forward:result2";
-    }
-
-    @GetMapping("result2")
-    public String result2(Model model){
-        System.out.printf("reqBean2.data3 : %s\n", reqBean2.getData3());
-        System.out.printf("reqBean2.data4 : %s\n", reqBean2.getData4());
-
-        model.addAttribute("reqBean2", reqBean2);
-
-        return "result2";
-    }
 
 }
