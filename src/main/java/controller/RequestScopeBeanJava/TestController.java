@@ -19,6 +19,7 @@ public class TestController {
     // 여기서 주의할 점은, @RequestScope 를 사용했기 때문에, 요청이 있을 때 bean 을 주입하겠단 의미이기 때문에,
     // request 에 값이 저장되지 않는다는 점이다.
     // 즉, 내부 요소를 활용하려면 Model 에 따로 담은다음 HttpServletRequest 로 불러와야 한다.
+
     @Autowired
     DataBean reqBean1;
 
