@@ -24,8 +24,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 //@ComponentScan("controller.RedirectForward")
 //@ComponentScan("controller.RequestScope")
 
-@ComponentScan("controller.RequestScopeBeanJava")
-@ComponentScan("controller.RequestScopeBeanJava.beans")
+//@ComponentScan("controller.RequestScopeBeanJava")
+//@ComponentScan("controller.RequestScopeBeanJava.beans")
+
+@ComponentScan("controller.SessionScope")
 public class ServletAppContext implements WebMvcConfigurer {
 
     // Controller 의 메서드가 반환하는 jsp 의 이름 앞/뒤의 경로와 확장자를 붙혀주도록 설정.

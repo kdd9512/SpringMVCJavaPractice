@@ -11,19 +11,23 @@ import org.springframework.web.context.annotation.RequestScope;
 public class RootAppContext {
 
     // DataBean 을 @Bean 으로 정의.
-    @Bean
-    //  @RequestScope 을 갖는 이 Bean 은 새 요청이 발생되었을 때 주입된다.
-    @RequestScope
-    public DataBean dataBean(){
+//    @Bean
 
-        return new DataBean();
-    }
+//  @RequestScope 을 갖는 이 Bean 은 새 요청이 발생되었을 때 주입된다.
+//    @RequestScope
+//    public DataBean dataBean(){
+//
+//        return new DataBean();
+//    }
+//
+//    @Bean("reqBean2")
+//    @RequestScope
+//    public DataBean2 dataBean2(){
+//        return new DataBean2();
+//    }
 
-    @Bean("reqBean2")
-    @RequestScope
-    public DataBean2 dataBean2(){
-        return new DataBean2();
-    }
+
+
 
 
 }
