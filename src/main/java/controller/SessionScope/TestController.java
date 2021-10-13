@@ -3,13 +3,25 @@ package controller.SessionScope;
 import controller.SessionScope.beans.DataBean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
+// SessionAttributes("적용할 @ModelAttribute 이름")
+// 해당 이름으로 주입받는 @ModelAttribute 는 request 영역에 저장하지 않고 session 영역에 저장된다.
+@SessionAttributes("sBean1")
 public class TestController {
+
+    // 이 때, session 객체에 저장되어 있지 않다면 주입을 할 수 없으므로,
+    // session 객체를 만들 필요가 있다.
+    @ModelAttribute("sBean1")
+    public DataBean sBean1(){
+        return new DataBean();
+    }
 
 
     @GetMapping("t1")
@@ -108,5 +120,28 @@ public class TestController {
 
         return "result2";
     }
+
+
+
+
+    @GetMapping("t5")
+    // 커맨드 객체 작성된 순서별로..
+    // 1. @ModelAttribute("ModelAttribute 의 이름")
+    // 2. 정의된 bean
+    // 3. local name
+    public String test5(@ModelAttribute("sBean1") DataBean sBean1){
+
+        sBean1.setData1("string6");
+        sBean1.setData2("string7");
+
+        return "test5";
+    }
+
+    @GetMapping("result3")
+    public String result3(){
+
+        return "result3";
+    }
+
 
 }

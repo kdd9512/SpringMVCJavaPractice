@@ -232,7 +232,7 @@ ViewResolver 는 이를 이용하여 jsp 작업시 데이터를 이용할 수 �
 <a href="result2">result2 SessionScope (@SessionAttribute)</a>
 <hr/>
 <br/>
-<a href="t5">t4 SessionScope (@SessionAttributes)</a>
+<a href="t5">t5 SessionScope (@SessionAttributes)</a>
 <br/>
 <a href="result3">result2 SessionScope (@SessionAttributes)</a>
 

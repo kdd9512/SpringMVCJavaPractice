@@ -10,8 +10,8 @@
 
 <%-- SessionScope 예제 --%>
 <h1>result2</h1>
-<h2>bean2.data1 : ${sessionScope.bean2.data1}</h2>
-<h2>bean2.data2 : ${sessionScope.bean2.data2}</h2>
+<h2>sBean1.data1 : ${sessionScope.sBean1.data1}</h2>
+<h2>sBean1.data2 : ${sessionScope.sBean1.data2}</h2>
 
 </body>
 </html>
