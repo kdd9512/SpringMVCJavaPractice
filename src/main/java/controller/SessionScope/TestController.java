@@ -11,15 +11,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
+
 // SessionAttributes("적용할 @ModelAttribute 이름")
 // 해당 이름으로 주입받는 @ModelAttribute 는 request 영역에 저장하지 않고 session 영역에 저장된다.
-@SessionAttributes("sBean1")
+// 만약 적용할 ModelAttribute 가 1 개 이상이라면? 배열로 만들어 적용한다.
+// @SessionAttributes({"요소1", "요소2", "요소3", ...})
+@SessionAttributes({"sBean1", "sBean2"})
 public class TestController {
 
     // 이 때, session 객체에 저장되어 있지 않다면 주입을 할 수 없으므로,
     // session 객체를 만들 필요가 있다.
     @ModelAttribute("sBean1")
     public DataBean sBean1(){
+        return new DataBean();
+    }
+
+    @ModelAttribute("sBean2")
+    public DataBean sBean2(){
         return new DataBean();
     }
 
@@ -129,16 +137,28 @@ public class TestController {
     // 1. @ModelAttribute("ModelAttribute 의 이름")
     // 2. 정의된 bean
     // 3. local name
-    public String test5(@ModelAttribute("sBean1") DataBean sBean1){
+    // ModelAttribute 가 1 개 이상이라면 그냥 쉼표찍고 하나 더 추가.
+    public String test5(@ModelAttribute("sBean1") DataBean sBean1,
+                        @ModelAttribute("sBean2") DataBean sBean2){
 
         sBean1.setData1("string6");
         sBean1.setData2("string7");
+
+        sBean2.setData1("string8");
+        sBean2.setData2("string9");
 
         return "test5";
     }
 
     @GetMapping("result3")
-    public String result3(){
+    public String result3(@ModelAttribute("sBean1") DataBean sBean1,
+                          @ModelAttribute("sBean2") DataBean sBean2){
+
+        System.out.printf("sBean1.data1 : %s\n", sBean1.getData1());
+        System.out.printf("sBean1.data2 : %s\n", sBean1.getData2());
+
+        System.out.printf("sBean2.data1 : %s\n", sBean2.getData1());
+        System.out.printf("sBean2.data2 : %s\n", sBean2.getData2());
 
         return "result3";
     }
