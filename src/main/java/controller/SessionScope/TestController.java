@@ -26,6 +26,7 @@ public class TestController {
         return new DataBean();
     }
 
+    // 메서드는 SessionAttributes 적용할 ModelAttribute 의 개수만큼 만들어야 한다.
     @ModelAttribute("sBean2")
     public DataBean sBean2(){
         return new DataBean();

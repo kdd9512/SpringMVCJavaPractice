@@ -215,26 +215,33 @@ ViewResolver 는 이를 이용하여 jsp 작업시 데이터를 이용할 수 �
 
 
 
-<%-- SessionScope JAVA --%>
+<%-- SessionScope --%>
 
+<%--<br/>--%>
+<%--<a href="t1">t1 SessionScope (HttpSession)</a>--%>
+<%--<br/>--%>
+<%--<a href="t2">t2 SessionScope (redirect) </a>--%>
+<%--<br/>--%>
+<%--<a href="t3">t3 SessionScope (forward) </a>--%>
+<%--<br/>--%>
+<%--<a href="result">result SessionScope </a>--%>
+<%--<hr/>--%>
+<%--<br/>--%>
+<%--<a href="t4">t4 SessionScope (@SessionAttribute)</a>--%>
+<%--<br/>--%>
+<%--<a href="result2">result2 SessionScope (@SessionAttribute)</a>--%>
+<%--<hr/>--%>
+<%--<br/>--%>
+<%--<a href="t5">t5 SessionScope (@SessionAttributes)</a>--%>
+<%--<br/>--%>
+<%--<a href="result3">result2 SessionScope (@SessionAttributes)</a>--%>
+
+
+
+<%-- SessionScopeJava --%>
 <br/>
-<a href="t1">t1 SessionScope (HttpSession)</a>
-<br/>
-<a href="t2">t2 SessionScope (redirect) </a>
-<br/>
-<a href="t3">t3 SessionScope (forward) </a>
-<br/>
-<a href="result">result SessionScope </a>
-<hr/>
-<br/>
-<a href="t4">t4 SessionScope (@SessionAttribute)</a>
-<br/>
-<a href="result2">result2 SessionScope (@SessionAttribute)</a>
-<hr/>
-<br/>
-<a href="t5">t5 SessionScope (@SessionAttributes)</a>
-<br/>
-<a href="result3">result2 SessionScope (@SessionAttributes)</a>
+<a href="t1">t1 SessionScopeJava </a><br/>
+<a href="result">result SessionScopeJava</a><br/>
 
 </body>
 </html>
