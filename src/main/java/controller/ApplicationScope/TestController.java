@@ -39,11 +39,12 @@ public class TestController {
 
     public String result1() {
         String data1 = (String) app.getAttribute("data1");
-        DataBean data2 = (DataBean) app.getAttribute("bean1");
+        DataBean bean1 = (DataBean) app.getAttribute("bean1");
+
 
         System.out.printf("data1 : %s\n", data1);
-        //
-        System.out.printf("data2 : %s\n", data2.getData2());
+
+        System.out.printf("bean1 : %s\n",(String) bean1.getData2());
 
         return "result";
     }
