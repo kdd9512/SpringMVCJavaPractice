@@ -25,6 +25,8 @@
 <%-- sessionScope 를 이용하여 session 영역에 접근한다. --%>
 <%--<h3>data1 : ${sessionScope.data1}</h3>--%>
 
+
+
 <%-- SessionScopeBeanJava 예제 결과출력 --%>
 
 <%--
@@ -43,16 +45,23 @@
 <%-- Model 을 이용하여 데이터를 저장했으므로 (데이터는 request 영역에 있을 것.)
      requestScope 를 이용하여 데이터를 불러와야 한다.
 --%>
-<h2>sessBean1.data1 : ${requestScope.sessBean1.data1}</h2>
-<h2>sessBean1.data2 : ${requestScope.sessBean1.data2}</h2>
-<h2>sessBean2.data3 : ${requestScope.sessBean2.data3}</h2>
-<h2>sessBean2.data4 : ${requestScope.sessBean2.data4}</h2>
+<%--<h2>sessBean1.data1 : ${requestScope.sessBean1.data1}</h2>--%>
+<%--<h2>sessBean1.data2 : ${requestScope.sessBean1.data2}</h2>--%>
+<%--<h2>sessBean2.data3 : ${requestScope.sessBean2.data3}</h2>--%>
+<%--<h2>sessBean2.data4 : ${requestScope.sessBean2.data4}</h2>--%>
 
-<h2>sessBean3.data5 : ${requestScope.sessBean3.data5}</h2>
-<h2>sessBean3.data6 : ${requestScope.sessBean3.data6}</h2>
-<h2>sessBean4.data7 : ${requestScope.sessBean4.data7}</h2>
-<h2>sessBean4.data8 : ${requestScope.sessBean4.data8}</h2>
+<%--<h2>sessBean3.data5 : ${requestScope.sessBean3.data5}</h2>--%>
+<%--<h2>sessBean3.data6 : ${requestScope.sessBean3.data6}</h2>--%>
+<%--<h2>sessBean4.data7 : ${requestScope.sessBean4.data7}</h2>--%>
+<%--<h2>sessBean4.data8 : ${requestScope.sessBean4.data8}</h2>--%>
 
+
+
+<%-- ApplicationScope 예제 --%>
+
+<%-- 이 방식은 md 파일에도 쓰여있듯, 브라우저에 관계 없이 데이터가 남는다. --%>
+<h2>ApplicationScope.data1 : ${applicationScope.data1}</h2>
+<h2>ApplicationScope.data2 : ${applicationScope.bean1.data2}</h2>
 
 
 </body>

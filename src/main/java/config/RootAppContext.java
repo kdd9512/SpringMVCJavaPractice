@@ -1,10 +1,11 @@
 package config;
 
-import controller.RequestScopeBeanJava.beans.DataBean;
+import controller.ApplicationScope.beans.DataBean;
 import controller.SessionScopeBeanJava.beans.DataBean1;
 import controller.SessionScopeBeanJava.beans.DataBean2;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.context.annotation.ApplicationScope;
 import org.springframework.web.context.annotation.RequestScope;
 import org.springframework.web.context.annotation.SessionScope;
 
@@ -33,21 +34,22 @@ public class RootAppContext {
 
     // 이후 TestController 에서 자동주입할 것이므로, Bean 등록.
 
+//    @Bean
+//    @SessionScope
+//    public DataBean1 dataBean1(){
+//        return new DataBean1();
+//    }
+//
+//    // 이름을 통해 주입.
+//    @Bean("sessBean2")
+//    @SessionScope
+//    public DataBean2 dataBean2(){
+//        return new DataBean2();
+//    }
+
     @Bean
-    @SessionScope
-    public DataBean1 dataBean1(){
-        return new DataBean1();
+    @ApplicationScope
+    public DataBean databean(){
+        return new DataBean();
     }
-
-    // 이름을 통해 주입.
-    @Bean("sessBean2")
-    @SessionScope
-    public DataBean2 dataBean2(){
-        return new DataBean2();
-    }
-
-
-
-
-
 }

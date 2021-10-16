@@ -239,9 +239,16 @@ ViewResolver 는 이를 이용하여 jsp 작업시 데이터를 이용할 수 �
 
 
 <%-- SessionScopeJava --%>
+<%--<br/>--%>
+<%--<a href="t1">t1 SessionScopeJava </a><br/>--%>
+<%--<a href="result">result SessionScopeJava</a><br/>--%>
+
+
+
+<%-- ApplicationScope --%>
 <br/>
-<a href="t1">t1 SessionScopeJava </a><br/>
-<a href="result">result SessionScopeJava</a><br/>
+<a href="t1">t1 ApplicationScope</a>
+<a href="result">result ApplicationScope</a>
 
 </body>
 </html>
