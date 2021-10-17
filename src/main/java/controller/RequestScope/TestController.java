@@ -123,7 +123,7 @@ public class TestController {
     // 여기서 ModelAttribute 로 새로운 bean 객체가 주입되어
     // 기존 bean 에 덮어씌워져 기존 bean 이 삭제되어 버리기 때문이다.
 
-//    public String result5(@ModelAttribute("beanData") DataBean bean){
+//    public String result5(@ModelAttribute("beanData") AppliScopeBean bean){
     public String result5(HttpServletRequest req){
 
         // 상술한 것과 같은 문제가 생기기 때문에, 기존 bean 의 데이터를 불러오려면

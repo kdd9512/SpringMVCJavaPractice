@@ -20,7 +20,7 @@
   
 
 * (중요) 주입된 Bean 은 application 영역에 저장되지 않는다.  
-  1. 데이터를 저장하고 싶다면 Model 클래스를 이용하여 데이터를 담아서 requestScope 영역에서 찾거나,
+  1. 데이터를 저장하고 싶다면 Model 클래스를 이용하여 데이터를 담아서 requestScope 영역에서 찾거나, 
   2. 이전 applicationScope 예제에서 이용했던 HttpServletRequest 의 ServletContext 를 이용해야 한다.
 
 

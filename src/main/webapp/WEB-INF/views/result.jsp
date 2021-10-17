@@ -60,8 +60,23 @@
 <%-- ApplicationScope 예제 --%>
 
 <%-- 이 방식은 md 파일에도 쓰여있듯, 브라우저에 관계 없이 데이터가 남는다. --%>
-<h2>ApplicationScope.data1 : ${applicationScope.data1}</h2>
-<h2>ApplicationScope.data2 : ${applicationScope.bean1.data2}</h2>
+<%--<h2>ApplicationScope.data1 : ${applicationScope.data1}</h2>--%>
+<%--<h2>ApplicationScope.data2 : ${applicationScope.bean1.data2}</h2>--%>
+
+
+<%-- ApplicationScopeJava 예제 --%>
+
+<%--
+    applicationScope 는 서버 가동 시, 데이터를 주입하는 역할"만" 하며
+    해당 영역에 데이터를 저장하거나 하지 않기 때문에,
+    applicationScope 영역에서 Bean 내의 데이터를 찾아도 출력되지 않는다.
+    데이터를 저장하고 싶다면 Model 클래스를 이용하여 데이터를 담아서 requestScope 영역에서 찾거나
+    이전 applicationScope 예제에서 이용했던 HttpServletRequest 의 ServletContext 를 이용해야 한다.
+--%>
+<h2>appBean.data1 : ${requestScope.appBean.data1}</h2>
+<h2>appBean.data2 : ${requestScope.appBean.data2}</h2>
+<h2>appBean2.data3 : ${requestScope.appBean2.data3}</h2>
+<h2>appBean2.data4 : ${requestScope.appBean2.data4}</h2>
 
 
 </body>

@@ -14,7 +14,7 @@ import javax.annotation.Resource;
 @Controller
 public class TestController {
 
-    // RootAppContext 에서 정의한 Bean 을 자동주입한다. DataBean 타입으로 주입받고 이름을 reqBean1 로 설정.
+    // RootAppContext 에서 정의한 Bean 을 자동주입한다. AppliScopeBean 타입으로 주입받고 이름을 reqBean1 로 설정.
     // Bean 주입은 요청이 있을 때만 주입된다.
     // 여기서 주의할 점은, @RequestScope 를 사용했기 때문에, 요청이 있을 때 bean 을 주입하겠단 의미이기 때문에,
     // request 에 값이 저장되지 않는다는 점이다.

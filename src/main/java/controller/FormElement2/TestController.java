@@ -23,7 +23,7 @@ public class TestController {
         // 의도한 대로 작동되지 않으며 해당 문자열을 찾을 수 없어 가장 처음 값인 빨갱이1 이 표시된다.
         bean.setD4("황철동무");
 
-        // form:checkbox 를 위한 array. 이 Array 를 DataBean 의 변수 d5, d6, d7 에 주입한다.
+        // form:checkbox 를 위한 array. 이 Array 를 AppliScopeBean 의 변수 d5, d6, d7 에 주입한다.
         String [] chkList = {"공산당", "안할거야"};
         bean.setD5(chkList);
         bean.setD6(chkList);

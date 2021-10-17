@@ -98,7 +98,7 @@ public class TestController {
 // 이하의 방식으로 bean 에 값을 입력하고 session 을 만들려고 하면 bean1 이라는 session 을 찾을 수 없다는 오류가 발생함.
 // ** SessionAttribute 와 SessionAttribute"s" 는 다른 annotation 이므로 주의.
 //    @GetMapping("t4")
-//    public String test4(@SessionAttribute("bean1") DataBean bean1) {
+//    public String test4(@SessionAttribute("bean1") AppliScopeBean bean1) {
 //
 //        bean1.setData1("string4");
 //        bean1.setData2("string5");
@@ -114,7 +114,7 @@ public class TestController {
 //        직접추출 방식 동작을 위한 부분은 이것만으로도 충분하다.
 //        sess.getAttribute("bean1");
 
-//        DataBean bean1 = (DataBean) sess.getAttribute("bean1");
+//        AppliScopeBean bean1 = (AppliScopeBean) sess.getAttribute("bean1");
 //        System.out.printf("bean1.data1 : %s\n", bean1.getData1());
 //        System.out.printf("bean1.data2 : %s\n", bean1.getData2());
 

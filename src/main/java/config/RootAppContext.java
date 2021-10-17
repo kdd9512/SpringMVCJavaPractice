@@ -1,26 +1,24 @@
 package config;
 
 import controller.ApplicationScope.beans.DataBean;
-import controller.SessionScopeBeanJava.beans.DataBean1;
-import controller.SessionScopeBeanJava.beans.DataBean2;
+import controller.ApplicationScopeJava.beans.AppliScopeBean;
+import controller.ApplicationScopeJava.beans.AppliScopeBean2;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.annotation.ApplicationScope;
-import org.springframework.web.context.annotation.RequestScope;
-import org.springframework.web.context.annotation.SessionScope;
 
 // 프로젝트 작업 시, 사용할 Bean 을 정의하는 클래스.
 @Configuration
 public class RootAppContext {
 
-    // DataBean 을 @Bean 으로 정의.
+    // AppliScopeBean 을 @Bean 으로 정의.
 //    @Bean
 
 //  @RequestScope 을 갖는 이 Bean 은 새 요청이 발생되었을 때 주입된다.
 //    @RequestScope
-//    public DataBean dataBean(){
+//    public AppliScopeBean dataBean(){
 //
-//        return new DataBean();
+//        return new AppliScopeBean();
 //    }
 
 //    @Bean("reqBean2")
@@ -52,4 +50,21 @@ public class RootAppContext {
     public DataBean databean(){
         return new DataBean();
     }
+
+    // 서버가 가동되면 한 번 주입되고 이후에는 주입되지 않음.
+
+    // 타입을 통한 주입
+    @Bean
+    @ApplicationScope
+    public AppliScopeBean appliScopeBean() {
+        return new AppliScopeBean();
+    }
+
+    // 이름을 통한 주입.
+    @Bean("appBean2")
+    @ApplicationScope
+    public AppliScopeBean2 appliScopeBean2() {
+        return new AppliScopeBean2();
+    }
+
 }

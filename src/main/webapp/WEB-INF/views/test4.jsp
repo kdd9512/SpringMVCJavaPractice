@@ -26,7 +26,7 @@
  --%>
 <%--<form:form modelAttribute="userModel" action="result">--%>
     <%-- <input id="user_name" name="user_name"
-                type="text" value="DataBean 에서 입력했던 그 값"/> 의 형태가
+                type="text" value="AppliScopeBean 에서 입력했던 그 값"/> 의 형태가
          자동으로 만들어진다.
    --%>
 <%--    이름 : <form:input path="user_name"/><br/>--%>

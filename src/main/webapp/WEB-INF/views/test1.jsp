@@ -144,7 +144,7 @@
 <%--    <hr/>--%>
 <%--
     value 값과 select 태그에 선택지로 나타날 문자열이 같은 경우
-    기준이 될 path 를 DataBean 의 private 변수를 부르고,
+    기준이 될 path 를 AppliScopeBean 의 private 변수를 부르고,
     item 에서는 Controller 내에서 정의한 Array 를 불러 처리한다.
     예제에서는 이렇게 직접 Array 를 임의로 제작해서 설정하나,
     실제 업무에서는 MyBatis 로 주입받는 data 의 Array 값을 그대로 받아, 좌표만 설정하는 것이 기본이다.

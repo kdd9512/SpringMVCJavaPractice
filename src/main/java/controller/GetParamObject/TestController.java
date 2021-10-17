@@ -41,7 +41,7 @@ public class TestController {
 
 
     // @ModelAttribute( = 커맨드 객체(Command Object))
-    //  public String test2(@ModelAttribute DataBean bean1) {
+    //  public String test2(@ModelAttribute AppliScopeBean bean1) {
 
     // 1. 원하는 데이터만 받을 수 있다.
     //    public String test2(@ModelAttribute DataBean2 bean2) {

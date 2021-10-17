@@ -50,7 +50,7 @@ public class TestController {
 
     @GetMapping("/t4")
     public String test4(Model md) {
-        // DataBean 을 불러온다
+        // AppliScopeBean 을 불러온다
         DataBean bean = new DataBean();
 
         // Model 객체에 값을 담는다.
@@ -61,7 +61,7 @@ public class TestController {
         bean.setUser_add1("주소1");
         bean.setUser_add2("주소2");
 
-        // 위에서 Model 로 설정한 값들을 DataBean 에 담는다.
+        // 위에서 Model 로 설정한 값들을 AppliScopeBean 에 담는다.
         // 여기서 설정한 이름은 Custom Form Tag 를 이용할 때, modelAttribute 에 입력해야 정상작동한다
         md.addAttribute("userModel", bean);
 
