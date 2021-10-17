@@ -77,6 +77,10 @@
 <h2>appBean.data2 : ${requestScope.appBean.data2}</h2>
 <h2>appBean2.data3 : ${requestScope.appBean2.data3}</h2>
 <h2>appBean2.data4 : ${requestScope.appBean2.data4}</h2>
+<h2>appBean3.data5 : ${requestScope.appBean3.data5}</h2>
+<h2>appBean3.data6 : ${requestScope.appBean3.data6}</h2>
+<h2>appBean4.data7 : ${requestScope.appBean4.data7}</h2>
+<h2>appBean4.data8 : ${requestScope.appBean4.data8}</h2>
 
 
 </body>
