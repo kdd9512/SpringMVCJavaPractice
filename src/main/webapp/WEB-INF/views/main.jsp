@@ -253,9 +253,17 @@ ViewResolver 는 이를 이용하여 jsp 작업시 데이터를 이용할 수 �
 
 
 <%-- ApplicationScopeJava --%>
+<%--<br/>--%>
+<%--<a href="t1">t1 ApplicationScopeJava</a><br/>--%>
+<%--<a href="result">result ApplicationScopeJava</a>--%>
+
+
+
+<%-- Cookie --%>
 <br/>
-<a href="t1">t1 ApplicationScopeJava</a><br/>
-<a href="result">result ApplicationScopeJava</a>
+<a href="save_cookie">Cookie 저장</a><br/>
+<a href="load_cookie">Cookie 저장결과 (spring 미사용)</a><br/>
+<a href="load_cookie2">Cookie 저장결과 (spring 적용)</a><br/>
 
 </body>
 </html>
