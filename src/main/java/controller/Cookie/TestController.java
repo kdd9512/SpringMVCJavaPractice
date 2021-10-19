@@ -47,10 +47,12 @@ public class TestController {
     // 브라우저 내에 저장된 쿠키는 요청한다면 내 의도와는 상관없이 모든 쿠키가 전부 호출되기 때문에
     // 아무 조치를 취하지 않는다면, 원하는 쿠키만 사용하는 것은 사실상 불가능하다.
 
+    // SpringMVC 기능 미사용.
     // 특정 쿠키 몇 개만 사용하고 싶다면..
     // 1. HttpServletRequest 에 담겨오는 cookie 정보를 먼저 추출하고 배열에 담은 다음,
     // 2. 반복문으로 검사하여 그 배열 내부에서 골라 내야 한다.
     // 3. JSP 내 에서 사용하고 싶다면 Model 에 담아야 한다.
+
     @GetMapping("load_cookie")
     public String load_cookie(HttpServletRequest req) {
         try {
@@ -76,7 +78,11 @@ public class TestController {
         return "load_cookie";
     }
 
-    // @Cookie annotation 이용.
+
+
+    // @CookieValue annotation 이용.
+    // @CookieValue("cookie 이름") 타입 지역변수명
+    // 원하는 cookie 의 개수 만큼 작성.
     @GetMapping("load_cookie2")
     public String load_cookie2(@CookieValue("cookie1") String cookie1,
                                @CookieValue("cookie2") String cookie2) {
