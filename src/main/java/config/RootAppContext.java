@@ -45,26 +45,26 @@ public class RootAppContext {
 //        return new DataBean2();
 //    }
 
-    @Bean
-    @ApplicationScope
-    public DataBean databean(){
-        return new DataBean();
-    }
+//    @Bean
+//    @ApplicationScope
+//    public DataBean databean(){
+//        return new DataBean();
+//    }
 
     // 서버가 가동되면 한 번 주입되고 이후에는 주입되지 않음.
 
     // 타입을 통한 주입
-    @Bean
-    @ApplicationScope
-    public AppliScopeBean appliScopeBean() {
-        return new AppliScopeBean();
-    }
+//    @Bean
+//    @ApplicationScope
+//    public AppliScopeBean appliScopeBean() {
+//        return new AppliScopeBean();
+//    }
 
     // 이름을 통한 주입.
-    @Bean("appBean2")
-    @ApplicationScope
-    public AppliScopeBean2 appliScopeBean2() {
-        return new AppliScopeBean2();
-    }
+//    @Bean("appBean2")
+//    @ApplicationScope
+//    public AppliScopeBean2 appliScopeBean2() {
+//        return new AppliScopeBean2();
+//    }
 
 }

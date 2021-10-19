@@ -37,8 +37,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 //@ComponentScan("controller.ApplicationScopeJava")
 //@ComponentScan("controller.ApplicationScopeJava.beans")
 
-@ComponentScan("controller.Cookie")
-public class ServletAppContext implements WebMvcConfigurer {
+//@ComponentScan("controller.Cookie")
+
+@ComponentScan("controller.Properties")
+public class
+ServletAppContext implements WebMvcConfigurer {
 
     // Controller 의 메서드가 반환하는 jsp 의 이름 앞/뒤의 경로와 확장자를 붙혀주도록 설정.
     // 이 작업을 통해 경로상에서 반복되는 부분을 입력하지 않아도 된다.
