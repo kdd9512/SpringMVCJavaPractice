@@ -14,4 +14,7 @@
   을 체크하여 문자를 바로 읽을 수 있게 설정한다.
 
 
-* 
+* properties 에 작성한 값을 JSP 에서 사용하고자 한다면,  
+  **properties 파일을 Message 로 등록할 필요가 있다.**  
+  자세한 내용은 MessageJava / Xml 예제 참고.
+

@@ -268,8 +268,14 @@ ViewResolver 는 이를 이용하여 jsp 작업시 데이터를 이용할 수 �
 
 
 <%-- Properties --%>
+<%--<br/>--%>
+<%--<a href="t1">Properties t1</a><br/>--%>
+
+
+
+<%-- MessageJava --%>
 <br/>
-<a href="t1">Properties t1</a><br/>
+<a href="t1">MessageJava t1</a><br/>
 
 </body>
 </html>

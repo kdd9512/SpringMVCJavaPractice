@@ -1,7 +1,9 @@
 package config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
@@ -39,7 +41,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 //@ComponentScan("controller.Cookie")
 
-@ComponentScan("controller.Properties")
+//@ComponentScan("controller.Properties")
+@ComponentScan("controller.MessageJava")
 public class
 ServletAppContext implements WebMvcConfigurer {
 
@@ -56,5 +59,19 @@ ServletAppContext implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         WebMvcConfigurer.super.addResourceHandlers(registry);
         registry.addResourceHandler("/**").addResourceLocations("/resources/");
+    }
+
+
+    // Properties 파일을 Message 로 등록.
+    @Bean
+    public ReloadableResourceBundleMessageSource messageSource() {
+        ReloadableResourceBundleMessageSource res = new ReloadableResourceBundleMessageSource();
+
+        // 경로를 작성한다. 단, 확장자인 .properties 는 제외한다.
+        // res.setBasename("/WEB-INF/properties/msgprop1");
+        res.setBasenames("/WEB-INF/properties/msgprop1",
+                         "/WEB-INF/properties/msgprop2");
+
+        return res;
     }
 }
