@@ -42,7 +42,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 //@ComponentScan("controller.Cookie")
 
 //@ComponentScan("controller.Properties")
-@ComponentScan("controller.MessageJava")
+//@ComponentScan("controller.MessageJava")
+@ComponentScan("controller.Validate")
 public class
 ServletAppContext implements WebMvcConfigurer {
 

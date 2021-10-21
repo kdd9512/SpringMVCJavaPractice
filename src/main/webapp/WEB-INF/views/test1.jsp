@@ -232,14 +232,15 @@
     이를 JSP 내에서 활용하려면 custom tag 가 필요한데, 이하의 taglib 을 추가한다.
     <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 --%>
-<h2>prop1.data1 : <spring:message code="prop1.data1"/></h2>
-<h2>prop1.data2 : <spring:message code="prop1.data2"/></h2>
+<%--<h2>prop1.data1 : <spring:message code="prop1.data1"/></h2>--%>
+<%--<h2>prop1.data2 : <spring:message code="prop1.data2"/></h2>--%>
 <%--
     해당 property 는 일종의 양식이므로 양식에 들어갈 arguments 가 필요하다.
     이하와 같이 TestController 에서 정의했던 arguments 를 추가한다.
 --%>
-<h2>prop2.data4 : <spring:message code="prop2.data4" arguments="${args}"/></h2>
-<h2>prop.localData : <spring:message code="prop.localData"/></h2>
+<%--<h2>prop2.data4 : <spring:message code="prop2.data4" arguments="${args}"/></h2>--%>
+<%--<h2>prop.localData : <spring:message code="prop.localData"/></h2>--%>
+
 
 
 </body>
