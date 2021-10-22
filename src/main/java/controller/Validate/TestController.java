@@ -38,9 +38,21 @@ public class TestController {
                 System.out.printf("Message : %s\n",obj.getDefaultMessage());
                 System.out.printf("code : %s\n", obj.getCode());
                 System.out.printf("Object name : %s\n", obj.getObjectName());
+
+                String [] codes = obj.getCodes();
+                for (String c1 : codes) {
+                    System.out.println(c1);
+                }
+
+                if (codes[0].equals("Size.validateBean.data1")) {
+                    System.out.println("data1 은 2~10 글자를 담아야 합니다.");
+                } else if (codes[0].equals("Max.validateBean.data2")) {
+                    System.out.println("data2 는 1000 이하의 값을 담아야 합니다.");
+                }
+
                 System.out.println("----------------------------------------------------------");
             }
-
+            return "input_data";
         }
 
         return "input_success";

@@ -1,14 +1,66 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%-- if문을 사용하기 위한 taglib --%>
+<%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
+<%-- custom form tag 를 사용하기 위한 taglib --%>
+<%--<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>--%>
+
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
     <h1>input data</h1>
-    <form action="input_prop" method="post">
-        data1 : <input type="text" name="data1"><br/>
-        data2 : <input type="text" name="data2"><br/>
-        <button type="submit">submit</button>
-    </form>
+<%--    <form action="input_prop" method="post">--%>
+<%--        data1 : <input type="text" name="data1"><br/>--%>
+<%--        <spring:hasBindErrors name="validateBean">--%>
+<%--            <c:if test="${errors.hasFieldErrors('data1')}">--%>
+<%--                ${errors.getFieldError('data1').defaultMessage}--%>
+<%--            </c:if>--%>
+<%--        </spring:hasBindErrors><br/>--%>
+<%--        data2 : <input type="text" name="data2"><br/>--%>
+<%--        <spring:hasBindErrors name="validateBean">--%>
+<%--            <c:if test="${errors.hasFieldErrors('data2')}">--%>
+<%--                ${errors.getFieldError('data2').defaultMessage}--%>
+<%--            </c:if>--%>
+<%--        </spring:hasBindErrors><br/>--%>
+<%--        <button type="submit">submit</button>--%>
+<%--    </form>--%>
+
+
+
+<%-- ValidationMsg 예제 --%>
+<%--
+    err_msg.properties 에 등록한 prop 이름과 codes[0] 이 일치하면
+    설정한 메세지를 출력하게끔 한 것.
+--%>
+<%-- jsp 활용한 버전. --%>
+<%--    <form action="input_prop" method="post">--%>
+<%--        data1 : <input type="text" name="data1"><br/>--%>
+<%--        <spring:hasBindErrors name="validateBean2">--%>
+<%--            <c:if test="${errors.hasFieldErrors('data1')}">--%>
+<%--                <spring:message code="${errors.getFieldError('data1').codes[0]}"/>--%>
+<%--            </c:if>--%>
+<%--        </spring:hasBindErrors><br/>--%>
+<%--        data2 : <input type="text" name="data2"><br/>--%>
+<%--        <spring:hasBindErrors name="validateBean2">--%>
+<%--            <c:if test="${errors.hasFieldErrors('data2')}">--%>
+<%--                <spring:message code="${errors.getFieldError('data2').codes[0]}"/>--%>
+<%--            </c:if>--%>
+<%--        </spring:hasBindErrors><br/>--%>
+<%--        <button type="submit">submit</button>--%>
+<%--    </form>--%>
+
+        <form:form action="input_prop"
+                   modelAttribute="validateBean2" method="post">
+            data1 : <form:input path="data1" type="text"/><br/>
+                    <form:errors path="data1"/><br/>
+            data2 : <form:input path="data2" type="text"/><br/>
+                    <form:errors path="data2"/><br/>
+            <form:button type="submit">submit</form:button>
+        </form:form>
+
 </body>
 </html>

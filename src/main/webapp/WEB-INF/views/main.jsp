@@ -279,7 +279,7 @@ ViewResolver 는 이를 이용하여 jsp 작업시 데이터를 이용할 수 �
 
 
 
-<%-- Validate --%>
+<%-- Validate & ValidateMsg --%>
 <br/>
 <a href="input_data">(Validate)input data</a><br/>
 
