@@ -44,7 +44,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 //@ComponentScan("controller.Properties")
 //@ComponentScan("controller.MessageJava")
 //@ComponentScan("controller.Validate")
-@ComponentScan("controller.ValidationMsg")
+//@ComponentScan("controller.ValidationMsg")
+@ComponentScan("controller.JsrAnnotation")
 public class
 ServletAppContext implements WebMvcConfigurer {
 
@@ -75,7 +76,7 @@ ServletAppContext implements WebMvcConfigurer {
 //        res.setBasenames("/WEB-INF/properties/msgprop1",
 //                         "/WEB-INF/properties/msgprop2");
 
-//        ValidationMsg 예제. 이하의 properties 를 사용한다.
+//        ValidationMsg / JsrAnnotation 예제. 이하의 properties 를 사용한다.
         res.setBasename("/WEB-INF/properties/err_msg");
 
         return res;

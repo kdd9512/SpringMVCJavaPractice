@@ -10,8 +10,12 @@
 <%--    <h2>data2 : ${validateBean.data2}</h2>--%>
 
 <%-- ValidationMsg 예제 --%>
-    <h2>data1 : ${validateBean2.data1}</h2>
-    <h2>data2 : ${validateBean2.data2}</h2>
+<%--    <h2>data1 : ${validateBean2.data1}</h2>--%>
+<%--    <h2>data2 : ${validateBean2.data2}</h2>--%>
+
+<%-- JsrAnnotation 예제 --%>
+
+
 
 </body>
 </html>

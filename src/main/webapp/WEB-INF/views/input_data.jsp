@@ -6,6 +6,7 @@
 
 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="for" uri="http://www.springframework.org/tags/form" %>
 
 <html>
 <head>
@@ -53,14 +54,28 @@
 <%--        <button type="submit">submit</button>--%>
 <%--    </form>--%>
 
-        <form:form action="input_prop"
-                   modelAttribute="validateBean2" method="post">
-            data1 : <form:input path="data1" type="text"/><br/>
-                    <form:errors path="data1"/><br/>
-            data2 : <form:input path="data2" type="text"/><br/>
-                    <form:errors path="data2"/><br/>
-            <form:button type="submit">submit</form:button>
-        </form:form>
+<%-- custom form tag 이용하여 작성. 결과는 위와 같다. --%>
+<%--        <form:form action="input_prop"--%>
+<%--                   modelAttribute="validateBean2" method="post">--%>
+<%--            data1 : <form:input path="data1" type="text"/><br/>--%>
+<%--                    <form:errors path="data1"/><br/>--%>
+<%--            data2 : <form:input path="data2" type="text"/><br/>--%>
+<%--                    <form:errors path="data2"/><br/>--%>
+<%--            <form:button type="submit">submit</form:button>--%>
+<%--        </form:form>--%>
+
+<%-- custom form tag 이용하여 작성. --%>
+<form:form action="input_prop"
+           modelAttribute="jsrBean" method="post">
+        data1 : <form:radiobutton path="data1" value="true"/> true
+                <form:radiobutton path="data1" value="false"/> false <br/>
+                <form:errors path="data1"/><br/>
+
+        data2 : <form:radiobutton path="data2" value="true"/> true
+                <form:radiobutton path="data2" value="false"/> false <br/>
+                <form:errors path="data2"/><br/>
+        <form:button type="submit">submit</form:button>
+</form:form>
 
 </body>
 </html>
