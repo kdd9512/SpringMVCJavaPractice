@@ -74,6 +74,21 @@
         data2 : <form:radiobutton path="data2" value="true"/> true
                 <form:radiobutton path="data2" value="false"/> false <br/>
                 <form:errors path="data2"/><br/>
+
+        data3 : <form:input path="data3" type="text"
+                            placeholder="input number (100~1000)" /><br/>
+                <form:errors path="data3"/><br/>
+
+        data4 : <form:input path="data4" type="text"
+                            placeholder="input number(100 미만 ~ 1000 초과)" /><br/>
+                <form:errors path="data4"/><br/>
+
+        data5 : <form:checkbox path="data5" value="check1"/>checkbox1<br/>
+                <form:errors path="data5"/><br/>
+
+        data6 : <form:checkbox path="data6" value="check2"/>checkbox1<br/>
+                <form:errors path="data6"/><br/>
+
         <form:button type="submit">submit</form:button>
 </form:form>
 
