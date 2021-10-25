@@ -89,6 +89,10 @@
         data6 : <form:checkbox path="data6" value="check2"/>checkbox1<br/>
                 <form:errors path="data6"/><br/>
 
+        data7 : <form:input path="data7" type="text"
+                            placeholder="input number (100~1000)" /><br/>
+                <form:errors path="data7"/><br/>
+
         <form:button type="submit">submit</form:button>
 </form:form>
 

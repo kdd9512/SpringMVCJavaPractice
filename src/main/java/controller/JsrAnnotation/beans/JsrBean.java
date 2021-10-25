@@ -23,6 +23,9 @@ public class JsrBean {
     @NotNull
     private String data6;
 
+    @Digits(integer = 4, fraction = 4)
+    private String data7;
+
     // 하나의 검사를 통과해야 그 다음 검사를 실행할 수 있기 때문에 이하와 같이 생성자를 하나 만들어준다.
     public JsrBean() {
         this.data1 = true;
@@ -80,5 +83,13 @@ public class JsrBean {
 
     public void setData6(String data6) {
         this.data6 = data6;
+    }
+
+    public String getData7() {
+        return data7;
+    }
+
+    public void setData7(String data7) {
+        this.data7 = data7;
     }
 }
