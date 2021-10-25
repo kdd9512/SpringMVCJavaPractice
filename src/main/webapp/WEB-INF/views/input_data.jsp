@@ -90,8 +90,12 @@
                 <form:errors path="data6"/><br/>
 
         data7 : <form:input path="data7" type="text"
-                            placeholder="input number (100~1000)" /><br/>
+                            placeholder="fraction / integer 4" /><br/>
                 <form:errors path="data7"/><br/>
+
+        data8 : <form:input path="data8" type="text"
+                            placeholder="min 5, max 10" /><br/>
+                <form:errors path="data8"/><br/>
 
         <form:button type="submit">submit</form:button>
 </form:form>
