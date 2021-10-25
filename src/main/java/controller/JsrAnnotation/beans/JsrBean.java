@@ -30,6 +30,7 @@ public class JsrBean {
         this.data3 = "100";
         this.data4 = "101";
         this.data5 = null;
+        this.data6 = "check2";
     }
 
 
