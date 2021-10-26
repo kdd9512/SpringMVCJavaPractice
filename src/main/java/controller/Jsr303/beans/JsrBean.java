@@ -1,4 +1,4 @@
-package controller.JsrAnnotation.beans;
+package controller.Jsr303.beans;
 
 import javax.validation.constraints.*;
 
@@ -29,6 +29,11 @@ public class JsrBean {
     @Size(min = 5, max = 10)
     private String data8;
 
+    // 비밀번호 정규식.(영문자와 숫자 특수기호가 적어도 1개 이상,6자 ~ 12자)
+    @Pattern(regexp = "(?=.*[0-9])(?=.*[a-z])(?=.*\\W)(?=\\S+$).{6,12}")
+    private String data9;
+
+
     // 하나의 검사를 통과해야 그 다음 검사를 실행할 수 있기 때문에 이하와 같이 생성자를 하나 만들어준다.
     public JsrBean() {
         this.data1 = true;
@@ -38,6 +43,7 @@ public class JsrBean {
         this.data5 = null;
         this.data6 = "check2";
         this.data7 = "1111.1111";
+        this.data8 = "최소5글자";
     }
 
 
@@ -103,5 +109,13 @@ public class JsrBean {
 
     public void setData8(String data8) {
         this.data8 = data8;
+    }
+
+    public String getData9() {
+        return data9;
+    }
+
+    public void setData9(String data9) {
+        this.data9 = data9;
     }
 }

@@ -1,6 +1,6 @@
-package controller.JsrAnnotation;
+package controller.Jsr303;
 
-import controller.JsrAnnotation.beans.JsrBean;
+import controller.Jsr303.beans.JsrBean;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;

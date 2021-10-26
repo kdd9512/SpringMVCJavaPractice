@@ -45,7 +45,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 //@ComponentScan("controller.MessageJava")
 //@ComponentScan("controller.Validate")
 //@ComponentScan("controller.ValidationMsg")
-@ComponentScan("controller.JsrAnnotation")
+//@ComponentScan("controller.Jsr303")
+@ComponentScan("controller.Jsr380")
 public class
 ServletAppContext implements WebMvcConfigurer {
 
