@@ -13,7 +13,7 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>input data</h1>
+<h1>input data</h1>
 <%--    <form action="input_prop" method="post">--%>
 <%--        data1 : <input type="text" name="data1"><br/>--%>
 <%--        <spring:hasBindErrors name="validateBean">--%>
@@ -29,7 +29,6 @@
 <%--        </spring:hasBindErrors><br/>--%>
 <%--        <button type="submit">submit</button>--%>
 <%--    </form>--%>
-
 
 
 <%-- ValidationMsg 예제 --%>
@@ -106,13 +105,28 @@
 
 
 <form:form action="input_prop" method="post" modelAttribute="jsrBean2">
-         data1 : <form:input path="data1" type="text" placeholder="@NotEmpty"/><br/>
-                 <form:errors path="data1"/><br/>
+    data1 : <form:input path="data1" placeholder="@NotEmpty"/><br/>
+    <form:errors path="data1"/><br/>
 
-         data2 : <form:input path="data2" type="text" placeholder="@NotBlank"/><br/>
-                 <form:errors path="data2"/><br/>
+    data2 : <form:input path="data2" placeholder="@NotBlank"/><br/>
+    <form:errors path="data2"/><br/>
 
-        <form:button type="submit">submit</form:button>
+    data3 : <form:input path="data3" placeholder="@Positive"/><br/>
+    <form:errors path="data3"/><br/>
+
+    data4 : <form:input path="data4" placeholder="@PositiveOrZero"/><br/>
+    <form:errors path="data4"/><br/>
+
+    data5 : <form:input path="data5" placeholder="@Negative"/><br/>
+    <form:errors path="data5"/><br/>
+
+    data6 : <form:input path="data6" placeholder="@NegativeOrZero"/><br/>
+    <form:errors path="data6"/><br/>
+
+    data7 : <form:input path="data7" placeholder="@Email"/><br/>
+    <form:errors path="data7"/><br/>
+
+    <form:button type="submit">submit</form:button>
 </form:form>
 </body>
 </html>
