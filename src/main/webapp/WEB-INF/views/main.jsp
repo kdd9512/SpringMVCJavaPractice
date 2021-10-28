@@ -292,7 +292,15 @@ ViewResolver 는 이를 이용하여 jsp 작업시 데이터를 이용할 수 �
 
 
 <%-- JSR-380 --%>
+<%--<br/>--%>
+<%--<a href="input_data">(JSR-380) input data</a><br/>--%>
+
+
+
+<%-- CustomValidator --%>
 <br/>
-<a href="input_data">(JSR-380) input data</a><br/>
+<a href="input_data">(CustomValidator) input data </a>
+
+
 </body>
 </html>

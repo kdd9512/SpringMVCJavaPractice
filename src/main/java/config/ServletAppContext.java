@@ -46,7 +46,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 //@ComponentScan("controller.Validate")
 //@ComponentScan("controller.ValidationMsg")
 //@ComponentScan("controller.Jsr303")
-@ComponentScan("controller.Jsr380")
+//@ComponentScan("controller.Jsr380")
+@ComponentScan("controller.CustomValidator")
 public class
 ServletAppContext implements WebMvcConfigurer {
 
@@ -73,6 +74,7 @@ ServletAppContext implements WebMvcConfigurer {
 
         // MessageJava 예제.
         // 경로를 작성한다. 단, 확장자인 .properties 는 제외한다.
+
         // res.setBasename("/WEB-INF/properties/msgprop1");
 //        res.setBasenames("/WEB-INF/properties/msgprop1",
 //                         "/WEB-INF/properties/msgprop2");
