@@ -48,8 +48,8 @@
 **CustomValidator 내 TestController 참고.**
 
 * @InitBinder annotation 을 이용하며 이하 code 를 적용.
-    * 사용할 Validator 가 하나라면 setValidator  
-      한 개 이상이라면, addValidators 를 사용한다.
+    * 사용할 Validator 가 하나라면 **setValidator**  
+      한 개 이상이라면, **addValidators** 를 사용한다.
 
 
     @InitBinder
