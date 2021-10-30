@@ -298,9 +298,18 @@ ViewResolver 는 이를 이용하여 jsp 작업시 데이터를 이용할 수 �
 
 
 <%-- CustomValidator --%>
-<br/>
-<a href="input_data">(CustomValidator) input data </a>
+<%--<br/>--%>
+<%--<a href="input_data">(CustomValidator) input data </a>--%>
 
+
+
+<%-- Interceptor --%>
+<br/>
+<a href="t1">(Interceptor) t1</a><br/>
+<a href="t2">(Interceptor) t2</a><br/>
+
+<a href="sub1/t3">(Interceptor) sub1/t3</a><br/>
+<a href="sub1/t4">(Interceptor) sub1/t4</a><br/>
 
 </body>
 </html>

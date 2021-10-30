@@ -1,13 +1,11 @@
 package config;
 
+import interceptor.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.*;
 
 // Spring MVC 프로젝트에 관련된 설정을 하는 클래스.
 @Configuration
@@ -47,7 +45,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 //@ComponentScan("controller.ValidationMsg")
 //@ComponentScan("controller.Jsr303")
 //@ComponentScan("controller.Jsr380")
-@ComponentScan("controller.CustomValidator")
+//@ComponentScan("controller.CustomValidator")
+
+@ComponentScan("controller.InterceptorJava")
 public class
 ServletAppContext implements WebMvcConfigurer {
 
@@ -83,5 +83,46 @@ ServletAppContext implements WebMvcConfigurer {
         res.setBasename("/WEB-INF/properties/err_msg");
 
         return res;
+    }
+
+    // Interceptor 등록.
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        WebMvcConfigurer.super.addInterceptors(registry);
+
+        TestInterceptor1 inter1 = new TestInterceptor1();
+        TestInterceptor2 inter2 = new TestInterceptor2();
+        TestInterceptor3 inter3 = new TestInterceptor3();
+        TestInterceptor4 inter4 = new TestInterceptor4();
+        TestInterceptor5 inter5 = new TestInterceptor5();
+        TestInterceptor6 inter6 = new TestInterceptor6();
+
+        InterceptorRegistration reg1 = registry.addInterceptor(inter1);
+        InterceptorRegistration reg2 = registry.addInterceptor(inter2);
+        InterceptorRegistration reg3 = registry.addInterceptor(inter3);
+        InterceptorRegistration reg4 = registry.addInterceptor(inter4);
+        InterceptorRegistration reg5 = registry.addInterceptor(inter5);
+        InterceptorRegistration reg6 = registry.addInterceptor(inter6);
+
+        // 관심사 등록.
+        reg1.addPathPatterns("/t1");
+        reg2.addPathPatterns("/t1");
+        reg3.addPathPatterns("/t2");
+
+        // 복수의 관심사 등록.
+//        reg4.addPathPatterns("/t1");
+//        reg4.addPathPatterns("/t2");
+        reg4.addPathPatterns("/t1","/t2");
+        reg5.addPathPatterns("/sub1/t3","/sub1/t4");
+
+        // * : any
+//        reg6.addPathPatterns("/*");
+//        reg6.addPathPatterns("/sub1/*");
+
+        // 모든 주소를 관심사로 등록.
+        reg6.addPathPatterns("/**");
+
+        // 제외할 관심사.
+        reg6.excludePathPatterns("/");
     }
 }

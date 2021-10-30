@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>TEST4</h1>
-    <img src="img/h.jpg"/>
+    <img src="h.jpg"/>
 </body>
 
 <%--<div>--%>
