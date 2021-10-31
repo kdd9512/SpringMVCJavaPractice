@@ -22,18 +22,22 @@
     
 
 * Global ExceptionHandler
-  
+
   * Controller 마다 발생 가능한 예외가 있다면 ExceptionHandler 를  
-    한 번만 정의하여 사용할 수 있다.
-    
+  한 번만 정의하여 사용할 수 있다.
+
+
   * Controller 에 정의한 ExceptionHandler 중 해당하는 오류가 없다면  
-    Global ExceptionHandler 에서 해당하는 예외를 찾아 처리하게 된다.
-    
-  1. Class 생성 후, @ControllerAdvice annotation 이용,  
-     클래스에 RuntimeException 을 상속(extends) 시킨 후   
-     Class 내부에 @ExceptionHandler 를 만들어 Global 로 처리할  
-     ExceptionHandler 메서드 작성.
+  Global ExceptionHandler 에서 해당하는 예외를 찾아 처리하게 된다.
+  
+
+  * 사용법  
+  
+    1. Class 생성 후, @ControllerAdvice annotation 이용,  
+       클래스에 RuntimeException 을 상속(extends) 시킨 후   
+       Class 내부에 @ExceptionHandler 를 만들어 Global 로 처리할  
+       ExceptionHandler 메서드 작성.
      
-  2. ServletAppContext.java 에 해당 Controller 가 담긴 폴더를  
-     @ComponentScan 으로 추가.
-     
+    2. ServletAppContext.java 에 해당 Controller 가 담긴 폴더를  
+       @ComponentScan 으로 추가.
+
