@@ -304,12 +304,19 @@ ViewResolver 는 이를 이용하여 jsp 작업시 데이터를 이용할 수 �
 
 
 <%-- Interceptor --%>
-<br/>
-<a href="t1">(Interceptor) t1</a><br/>
-<a href="t2">(Interceptor) t2</a><br/>
+<%--<br/>--%>
+<%--<a href="t1">(Interceptor) t1</a><br/>--%>
+<%--<a href="t2">(Interceptor) t2</a><br/>--%>
 
-<a href="sub1/t3">(Interceptor) sub1/t3</a><br/>
-<a href="sub1/t4">(Interceptor) sub1/t4</a><br/>
+<%--<a href="sub1/t3">(Interceptor) sub1/t3</a><br/>--%>
+<%--<a href="sub1/t4">(Interceptor) sub1/t4</a><br/>--%>
+
+
+<%-- HandleException --%>
+<br/>
+<a href="t1">(HomeController) t1</a><br/>
+<a href="t2">(HomeController) t2</a><br/>
+
 
 </body>
 </html>

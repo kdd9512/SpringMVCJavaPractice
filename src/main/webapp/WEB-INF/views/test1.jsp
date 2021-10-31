@@ -242,6 +242,8 @@
 <%--<h2>prop.localData : <spring:message code="prop.localData"/></h2>--%>
 
 
+<%-- HandleException --%>
+<h2>array1 : ${array1}</h2>
 
 </body>
 </html>
