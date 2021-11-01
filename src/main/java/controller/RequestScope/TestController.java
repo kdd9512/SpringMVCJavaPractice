@@ -50,7 +50,7 @@ public class TestController {
 
     public String result2(HttpServletRequest req){
 
-        // ** Model 을 주입받아서 addAttribute 하면 request 객체에 저장된다.
+        // ** Model 을 주입받아서 addAttribute 하면 request 영역에 저장된다.
         // 여기서 주의할 점은, Model 자체는 전달되지 않기 때문에 Model 의 값을 불러오려면
         // forward 때와 같이 HttpServletRequest 를 이용해야 한다는 점이다.
 
@@ -75,7 +75,7 @@ public class TestController {
     @GetMapping("result3")
     public String result3(HttpServletRequest req){
 
-        // ** ModelAndView 을 주입받아서 addAttribute 하면 request 객체에 저장된다.
+        // ** ModelAndView 을 주입받아서 addAttribute 하면 request 영역에 저장된다.
         // 여기서 주의할 점은, ModelAndView 자체는 전달되지 않기 때문에 ModelAndView 의 값을 불러오려면
         // forward 때와 같이 HttpServletRequest 를 이용해야 한다는 점이다.
 

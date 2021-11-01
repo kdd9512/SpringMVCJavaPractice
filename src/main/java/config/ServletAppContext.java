@@ -49,8 +49,10 @@ import org.springframework.web.servlet.config.annotation.*;
 
 //@ComponentScan("controller.InterceptorJava")
 
-@ComponentScan("controller.HandleException")
-@ComponentScan("exception")
+//@ComponentScan("controller.HandleException")
+//@ComponentScan("exception")
+
+@ComponentScan("controller.MybatisJava")
 public class
 ServletAppContext implements WebMvcConfigurer {
 

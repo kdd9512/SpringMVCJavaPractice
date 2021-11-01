@@ -313,9 +313,9 @@ ViewResolver 는 이를 이용하여 jsp 작업시 데이터를 이용할 수 �
 
 
 <%-- HandleException --%>
-<br/>
-<a href="t1">(HomeController) t1</a><br/>
-<a href="t2">(HomeController) t2</a><br/>
+<%--<br/>--%>
+<%--<a href="t1">(HomeController) t1</a><br/>--%>
+<%--<a href="t2">(HomeController) t2</a><br/>--%>
 
 
 </body>
