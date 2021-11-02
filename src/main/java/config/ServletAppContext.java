@@ -1,9 +1,17 @@
 package config;
 
+import database.MapperInterface;
 import interceptor.*;
+import javafx.css.StyleOrigin;
+import org.apache.commons.dbcp2.BasicDataSource;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.mapper.MapperFactoryBean;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.web.servlet.config.annotation.*;
 
@@ -53,8 +61,24 @@ import org.springframework.web.servlet.config.annotation.*;
 //@ComponentScan("exception")
 
 @ComponentScan("controller.MybatisJava")
+// properties 를 주입받기 위한 code
+
+@PropertySource("/WEB-INF/properties/database.properties")
 public class
 ServletAppContext implements WebMvcConfigurer {
+
+    // 프로퍼티의 DB 정보 호출.
+    @Value("${db.drv}")
+    private String dbDriver;
+
+    @Value("${db.url}")
+    private String dbUrl;
+
+    @Value("${db.usr}")
+    private String dbUserID;
+
+    @Value("${db.pwd}")
+    private String dbPassword;
 
     // Controller 의 메서드가 반환하는 jsp 의 이름 앞/뒤의 경로와 확장자를 붙혀주도록 설정.
     // 이 작업을 통해 경로상에서 반복되는 부분을 입력하지 않아도 된다.
@@ -73,9 +97,9 @@ ServletAppContext implements WebMvcConfigurer {
 
 
     // Properties 파일을 Message 로 등록.
-    @Bean
-    public ReloadableResourceBundleMessageSource messageSource() {
-        ReloadableResourceBundleMessageSource res = new ReloadableResourceBundleMessageSource();
+//    @Bean
+//    public ReloadableResourceBundleMessageSource messageSource() {
+//        ReloadableResourceBundleMessageSource res = new ReloadableResourceBundleMessageSource();
 
         // MessageJava 예제.
         // 경로를 작성한다. 단, 확장자인 .properties 는 제외한다.
@@ -85,10 +109,10 @@ ServletAppContext implements WebMvcConfigurer {
 //                         "/WEB-INF/properties/msgprop2");
 
 //        ValidationMsg / JsrAnnotation 예제. 이하의 properties 를 사용한다.
-        res.setBasename("/WEB-INF/properties/err_msg");
-
-        return res;
-    }
+//        res.setBasename("/WEB-INF/properties/err_msg");
+//
+//        return res;
+//    }
 
     // Interceptor 등록.
 //    @Override
@@ -130,4 +154,40 @@ ServletAppContext implements WebMvcConfigurer {
 //        // 제외할 관심사.
 //        reg6.excludePathPatterns("/");
 //    }
+
+
+    // db 접속정보를 관리한다.
+    @Bean
+    public BasicDataSource dataSource() {
+        BasicDataSource src = new BasicDataSource();
+        src.setDriverClassName(dbDriver);
+        src.setUrl(dbUrl);
+        src.setUsername(dbUserID);
+        src.setPassword(dbPassword);
+
+        return src;
+    }
+
+    // query 문과 접속정보를 관리.
+    @Bean
+    public SqlSessionFactory factory(BasicDataSource src) throws Exception {
+        SqlSessionFactoryBean factoryBean  = new SqlSessionFactoryBean();
+        factoryBean.setDataSource(src);
+        SqlSessionFactory factory = factoryBean.getObject();
+
+        return factory;
+    }
+
+    // 쿼리문 실행을 위한 객체
+    @Bean
+    public MapperFactoryBean<MapperInterface> testMapper(SqlSessionFactory factory)
+            throws Exception {
+        MapperFactoryBean<MapperInterface> factoryBean =
+                new MapperFactoryBean<>(MapperInterface.class);
+
+        factoryBean.setSqlSessionFactory(factory);
+
+        return factoryBean;
+    }
+
 }

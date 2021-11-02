@@ -134,15 +134,24 @@
 
 
 <%-- CustomValidator --%>
-<form:form action="input_prop" method="post" modelAttribute="cvBeans">
-    data1 : <form:input path="data1" placeholder="@Size(jsr303)"/><br/>
-            <form:errors path="data1"/><br/>
-    data2 : <form:input path="data2" placeholder="CustomValidator1"/><br/>
-            <form:errors path="data2"/><br/>
-    data3 : <form:input path="data3" placeholder="CustomValidator2"/><br/>
-            <form:errors path="data3"/><br/>
-    <form:button type="submit">submit</form:button>
-</form:form>
+<%--<form:form action="input_prop" method="post" modelAttribute="cvBeans">--%>
+<%--    data1 : <form:input path="data1" placeholder="@Size(jsr303)"/><br/>--%>
+<%--            <form:errors path="data1"/><br/>--%>
+<%--    data2 : <form:input path="data2" placeholder="CustomValidator1"/><br/>--%>
+<%--            <form:errors path="data2"/><br/>--%>
+<%--    data3 : <form:input path="data3" placeholder="CustomValidator2"/><br/>--%>
+<%--            <form:errors path="data3"/><br/>--%>
+<%--    <form:button type="submit">submit</form:button>--%>
+<%--</form:form>--%>
+
+
+<%--MyBatisJava--%>
+<form action="input_prop" method="post">
+    data1 : <input type="text" name="data1" placeholder="data1"><br/>
+    data2 : <input type="text" name="data2" placeholder="data2"><br/>
+    data3 : <input type="text" name="data3" placeholder="data3"><br/>
+    <button type="submit">submit</button>
+</form>
 
 </body>
 </html>

@@ -318,5 +318,10 @@ ViewResolver 는 이를 이용하여 jsp 작업시 데이터를 이용할 수 �
 <%--<a href="t2">(HomeController) t2</a><br/>--%>
 
 
+<%--MyBatisJava--%>
+<br/>
+<a href="input_data">(MyBatisJava) input_data </a><br/>
+<a href="read_data">(MyBatisJava) read_data </a><br/>
+
 </body>
 </html>
