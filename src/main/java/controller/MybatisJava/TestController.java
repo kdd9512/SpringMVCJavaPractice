@@ -1,5 +1,6 @@
-package controller.MybatisJava.beans;
+package controller.MybatisJava;
 
+import controller.MybatisJava.beans.myBatisBean;
 import database.MapperInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
