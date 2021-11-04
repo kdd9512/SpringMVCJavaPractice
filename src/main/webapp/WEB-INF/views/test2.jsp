@@ -64,8 +64,6 @@
 <%--<p>세션영역에 저장 완료..</p>--%>
 
 
-<%-- HandleException --%>
-<h2>test2</h2>
 
 
 </body>

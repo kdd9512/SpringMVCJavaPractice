@@ -60,9 +60,10 @@ import org.springframework.web.servlet.config.annotation.*;
 //@ComponentScan("controller.HandleException")
 //@ComponentScan("exception")
 
-@ComponentScan("controller.MybatisJava")
-// properties 를 주입받기 위한 code
+//@ComponentScan("controller.MybatisJava")
+@ComponentScan("controller.RestAPI")
 
+// properties 를 주입받기 위한 code
 @PropertySource("/WEB-INF/properties/database.properties")
 public class
 ServletAppContext implements WebMvcConfigurer {

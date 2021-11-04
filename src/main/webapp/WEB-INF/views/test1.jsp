@@ -243,7 +243,7 @@
 
 
 <%-- HandleException --%>
-<h2>array1 : ${array1}</h2>
+<%--<h2>array1 : ${array1}</h2>--%>
 
 </body>
 </html>
